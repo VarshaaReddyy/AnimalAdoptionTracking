@@ -1,0 +1,56 @@
+{
+  "name": "animaladoption",
+  "version": "1.0.0",
+  "description": "Welcome to your new CAP project.",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cds-serve",
+    "watch-animaladoption": "cds watch --open animal.adoption.animaladoption/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-animalusers": "cds watch --open animalusers/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-animalshelters": "cds watch --open animal.adoption.animalshelters/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-animalanimals": "cds watch --open animalanimals/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-animalapplications": "cds watch --open animal.adoption.animalapplications/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-animaladoptions": "cds watch --open animaladoptions/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-animalhealth": "cds watch --open animalhealth/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-animalinspections": "cds watch --open animalinspections/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-userdashboard": "cds watch --open animal.adoption.userdashboard/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-userprofile": "cds watch --open animal.adoption.userprofile/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-useranimals": "cds watch --open animal.adoption.useranimals/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-userapplications": "cds watch --open animal.adoption.userapplications/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-useradoptions": "cds watch --open animal.adoption.useradoptions/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-userinspections": "cds watch --open userinspections/index.html?sap-ui-xx-viewCache=false --livereload false"
+  },
+  "dependencies": {
+    "@cap-js/hana": "^3",
+    "@sap/cds": "^10"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^3",
+    "cds-plugin-ui5": "^0.17.0"
+  },
+  "private": true,
+  "workspaces": [
+    "app/*"
+  ],
+  "sapux": [
+    "app/animaladoption",
+    "app/animaladoption",
+    "app/animalusers",
+    "app/animalshelters",
+    "app/animalanimals",
+    "app/animalapplications",
+    "app/animaladoptions",
+    "app/animalhealth",
+    "app/animalinspections",
+    "app/userprofile",
+    "app/useranimals",
+    "app/userapplications",
+    "app/useradoptions",
+    "app/userinspections",
+    "app/animalusers"
+  ]
+}

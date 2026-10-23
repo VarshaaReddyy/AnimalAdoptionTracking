@@ -1,0 +1,136 @@
+POST http://localhost:4004/odata/v4/catalog/UsersSrv
+Content-Type: application/json
+ 
+{
+  "firstName": "Varsha",
+  "lastName": "Gopalolla",
+  "email": "varsha@example.com",
+  "phoneNumber": "9876543210",
+  "address": "Hyderabad",
+  "city": "Hyderabad",
+  "state": "Telangana",
+  "postalCode": "500001",
+  "role": "ADOPTER",
+  "status": "ACTIVE"
+}
+
+###
+POST http://localhost:4004/odata/v4/catalog/createShelter
+Content-Type: application/json
+
+{
+  "shelterName": "Happy Paws Shelter",
+  "shelterCode": "HPS001",
+  "addressLine1": "Road No 10, Banjara Hills",
+  "addressLine2": "Near City Park",
+  "city": "Hyderabad",
+  "state": "Telangana",
+  "postalCode": "500034",
+  "country": "India",
+  "contactNumber": "9876501234",
+  "email": "happypaws@example.com",
+  "website": "https://example.com",
+  "capacity": 100,
+  "currentOccupancy": 25,
+  "operatingTime": "09:00:00",
+  "closingTime": "18:00:00",
+  "shelterType": "NGO",
+  "licenseNumber": "TS-SHELTER-001"
+}
+
+###
+POST http://localhost:4004/odata/v4/catalog/createAnimal
+Content-Type: application/json
+
+{
+  "shelterID": "a51f19d6-40af-48f9-b288-88f61af6a407",
+  "name": "Bruno",
+  "species": "Dog",
+  "breed": "Labrador",
+  "gender": "Male",
+  "age": 2,
+  "arrivalDate": "2026-10-20",
+  "animalStatus": "AVAILABLE",
+  "vaccinationStatus": "COMPLETED",
+  "spayedOrNeutered": "NO",
+  "photo": "https://example.com/bruno.jpg",
+  "description": "Friendly Labrador looking for a loving home."
+}
+
+###
+POST http://localhost:4004/odata/v4/catalog/createApplication
+Content-Type: application/json
+
+{
+  "animalID": "f9247cc5-010b-441d-bcf1-307a8c61af22",
+  "applicantID": "22ea3086-9f48-40c8-bcde-624ab61722ce",
+  "applicationDate": "2026-10-20",
+  "reasonForAdoption": "I love animals and can provide a safe home.",
+  "housingDetails": "I live in a pet-friendly house in Hyderabad.",
+  "petExperience": "I have experience caring for dogs.",
+  "status": "UNDER_REVIEW",
+  "reviewedByID": "22ea3086-9f48-40c8-bcde-624ab61722ce",
+  "staffRemarks": "Application received for review."
+}
+
+###
+POST http://localhost:4004/odata/v4/catalog/createAdoption
+Content-Type: application/json
+
+{
+  "applicationID": "d5cf3dd4-ebed-4bcf-b0a7-8668d9a6003d",
+  "animalID": "f9247cc5-010b-441d-bcf1-307a8c61af22",
+  "adoptionDate": "2026-10-20",
+  "status": "COMPLETED",
+  "completedByID": "22ea3086-9f48-40c8-bcde-624ab61722ce",
+  "remarks": "Adoption completed successfully."
+}
+
+###
+POST http://localhost:4004/odata/v4/catalog/createHealthRecord
+Content-Type: application/json
+
+{
+  "animalID": "f9247cc5-010b-441d-bcf1-307a8c61af22",
+  "checkupDate": "2026-10-20",
+  "healthStatus": "HEALTHY",
+  "diagnosis": "Routine health check completed.",
+  "treatment": "No treatment required.",
+  "medication": "None",
+  "veterinarianName": "Dr. Ramesh",
+  "weight": 25.5,
+  "nextCheckupDate": "2026-11-20",
+  "remarks": "Animal is active and healthy.",
+  "medicalDocument": "https://example.com/medical-record.pdf"
+}
+
+###
+POST http://localhost:4004/odata/v4/catalog/createInspection
+Content-Type: application/json
+
+{
+  "adoptionID": "a7a5b8bd-5f5d-4a03-aa64-11cd6b46fd61",
+  "inspectorID": "22ea3086-9f48-40c8-bcde-624ab61722ce",
+  "inspectionDate": "2026-10-20",
+  "inspectionType": "HOME_VISIT",
+  "existingPetDetails": "No other pets in the house.",
+  "result": "PASS",
+  "remarks": "The home environment appears suitable.",
+  "inspectionDocument": "https://example.com/inspection.pdf"
+}
+###
+http://localhost:4004/odata/v4/catalog/DashboardStats
+
+###
+http://localhost:4004/odata/v4/catalog/$metadata
+
+###
+http://localhost:4004/odata/v4/catalog/UserDashboardStats
+###
+http://localhost:4004/odata/v4/catalog/ApplicationStatusSummary
+###
+http://localhost:4004/odata/v4/catalog/ShelterOccupancy
+###
+http://localhost:4004/odata/v4/catalog/AdoptionTrend
+###
+http://localhost:4004/odata/v4/catalog/AnimalCategorySummary

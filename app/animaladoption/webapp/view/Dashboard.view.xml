@@ -1,0 +1,707 @@
+<mvc:View
+    controllerName="animal.adoption.animaladoption.controller.Dashboard"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.data="sap.viz.ui5.data"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:layout="sap.ui.layout">
+
+    <Page
+        id="dashboardPage"
+        title="Animal Adoption Dashboard"
+        class="dashboardPage">
+
+        <content>
+
+            <VBox
+                id="mainVBox"
+                class="dashboardContainer">
+
+                <!-- ========================================= -->
+                <!-- HERO SECTION -->
+                <!-- ========================================= -->
+
+                <HBox
+                    id="heroSection"
+                    class="heroSection"
+                    justifyContent="SpaceBetween"
+                    alignItems="Center">
+
+                    <VBox
+                        id="heroTextBox"
+                        class="heroTextBox">
+
+                        <Title
+                            id="heroTitle"
+                            text="Animal Adoption Dashboard"
+                            class="heroTitle"/>
+
+                        <Text
+                            id="heroSubtitle"
+                            text="Every pet deserves a loving home ❤️"
+                            class="heroSubtitle"/>
+
+                        <Text
+                            id="heroDescription"
+                            text="Manage animals, shelters, applications and adoptions in one place."
+                            class="heroDescription"/>
+
+                    </VBox>
+
+                    <Image
+                        id="heroDogImage"
+                        src="images/dog.jpg"
+                        alt="Dog"
+                        class="heroImage"/>
+
+                    <Image
+                        id="heroCatImage"
+                        src="images/cat.jpg"
+                        alt="Cat"
+                        class="heroImageSmall"/>
+
+                </HBox>
+
+
+                <!-- ========================================= -->
+                <!-- DASHBOARD OVERVIEW -->
+                <!-- ========================================= -->
+
+                <Title
+                    id="dashboardOverviewTitle"
+                    text="Dashboard Overview"
+                    class="sectionTitle"/>
+
+
+                <!-- KPI TILES -->
+
+                <HBox
+                    id="kpiHBox"
+                    wrap="Wrap"
+                    justifyContent="SpaceBetween"
+                    class="kpiContainer">
+
+                    <!-- Total Animals -->
+
+                    <GenericTile
+                        id="tileAnimals"
+                        header="Total Animals"
+                        class="kpiTile kpiBlue">
+
+                        <TileContent id="tileContentAnimals">
+
+                            <NumericContent
+                                id="numAnimals"
+                                value="{dashboard>/totalAnimals}"
+                                valueColor="Good"/>
+
+                        </TileContent>
+
+                    </GenericTile>
+
+
+                    <!-- Available Animals -->
+
+                    <GenericTile
+                        id="tileAvailableAnimals"
+                        header="Available Animals"
+                        class="kpiTile kpiGreen">
+
+                        <TileContent
+                            id="tileContentAvailableAnimals">
+
+                            <NumericContent
+                                id="numAvailableAnimals"
+                                value="{dashboard>/availableAnimals}"
+                                valueColor="Good"/>
+
+                        </TileContent>
+
+                    </GenericTile>
+
+
+                    <!-- Applications -->
+
+                    <GenericTile
+                        id="tileApplications"
+                        header="Applications"
+                        class="kpiTile kpiPurple">
+
+                        <TileContent
+                            id="tileContentApplications">
+
+                            <NumericContent
+                                id="numApplications"
+                                value="{dashboard>/totalApplications}"
+                                valueColor="Neutral"/>
+
+                        </TileContent>
+
+                    </GenericTile>
+
+
+                    <!-- Approved -->
+
+                    <GenericTile
+                        id="tileApproved"
+                        header="Approved"
+                        class="kpiTile kpiGreen">
+
+                        <TileContent
+                            id="tileContentApproved">
+
+                            <NumericContent
+                                id="numApproved"
+                                value="{dashboard>/approvedApplications}"
+                                valueColor="Good"/>
+
+                        </TileContent>
+
+                    </GenericTile>
+
+
+                    <!-- Pending -->
+
+                    <GenericTile
+                        id="tilePending"
+                        header="Pending"
+                        class="kpiTile kpiOrange">
+
+                        <TileContent
+                            id="tileContentPending">
+
+                            <NumericContent
+                                id="numPending"
+                                value="{dashboard>/pendingApplications}"
+                                valueColor="Critical"/>
+
+                        </TileContent>
+
+                    </GenericTile>
+
+
+                    <!-- Shelters -->
+
+                    <GenericTile
+                        id="tileShelters"
+                        header="Shelters"
+                        class="kpiTile kpiBlue">
+
+                        <TileContent
+                            id="tileContentShelters">
+
+                            <NumericContent
+                                id="numShelters"
+                                value="{dashboard>/totalShelters}"
+                                valueColor="Neutral"/>
+
+                        </TileContent>
+
+                    </GenericTile>
+
+                </HBox>
+
+
+                <!-- ========================================= -->
+                <!-- MANAGE RECORDS -->
+                <!-- ========================================= -->
+
+                <Title
+                    id="manageRecordsTitle"
+                    text="Manage Records"
+                    class="sectionTitle"/>
+
+
+                <HBox
+                    id="navigationHBox"
+                    wrap="Wrap"
+                    justifyContent="SpaceBetween"
+                    class="navigationContainer">
+
+
+                    <!-- Users -->
+
+                    <GenericTile
+                        id="usersTile"
+                        header="Users"
+                        subheader="Manage Users"
+                        press=".onUsersPress"
+                        class="navigationTile usersTile">
+
+                        <TileContent id="usersTileContent">
+
+                            <ImageContent
+                                id="usersImage"
+                                src="sap-icon://employee"/>
+
+                        </TileContent>
+
+                    </GenericTile>
+
+
+                    <!-- Shelters -->
+
+                    <GenericTile
+                        id="sheltersTile"
+                        header="Shelters"
+                        subheader="Manage Shelters"
+                        press=".onSheltersPress"
+                        class="navigationTile shelterTile">
+
+                        <TileContent id="sheltersTileContent">
+
+                            <ImageContent
+                                id="sheltersImage"
+                                src="sap-icon://home"/>
+
+                        </TileContent>
+
+                    </GenericTile>
+
+
+                    <!-- Animals -->
+
+                    <GenericTile
+                        id="animalsTile"
+                        header="Animals"
+                        subheader="Manage Animals"
+                        press=".onAnimalsPress"
+                        class="navigationTile animalTile">
+
+                        <TileContent id="animalsTileContent">
+
+                            <ImageContent
+                                id="animalsImage"
+                                src="sap-icon://pet-care"/>
+
+                        </TileContent>
+
+                    </GenericTile>
+
+
+                    <!-- Applications -->
+
+                    <GenericTile
+                        id="applicationsTile"
+                        header="Applications"
+                        subheader="Manage Applications"
+                        press=".onApplicationsPress"
+                        class="navigationTile applicationTile">
+
+                        <TileContent id="applicationsTileContent">
+
+                            <ImageContent
+                                id="applicationsImage"
+                                src="sap-icon://document"/>
+
+                        </TileContent>
+
+                    </GenericTile>
+
+
+                    <!-- Adoptions -->
+
+                    <GenericTile
+                        id="adoptionsTile"
+                        header="Adoptions"
+                        subheader="Manage Adoptions"
+                        press=".onAdoptionsPress"
+                        class="navigationTile adoptionTile">
+
+                        <TileContent id="adoptionsTileContent">
+
+                            <ImageContent
+                                id="adoptionsImage"
+                                src="sap-icon://accept"/>
+
+                        </TileContent>
+
+                    </GenericTile>
+
+
+                    <!-- Health -->
+
+                    <GenericTile
+                        id="healthRecordsTile"
+                        header="Health Records"
+                        subheader="Manage Health"
+                        press=".onHealthRecordsPress"
+                        class="navigationTile healthTile">
+
+                        <TileContent id="healthRecordsTileContent">
+
+                            <ImageContent
+                                id="healthRecordsImage"
+                                src="sap-icon://clinical-order"/>
+
+                        </TileContent>
+
+                    </GenericTile>
+
+
+                    <!-- Inspections -->
+
+                    <GenericTile
+                        id="inspectionsTile"
+                        header="Inspections"
+                        subheader="Manage Inspections"
+                        press=".onInspectionsPress"
+                        class="navigationTile inspectionTile">
+
+                        <TileContent id="inspectionsTileContent">
+
+                            <ImageContent
+                                id="inspectionsImage"
+                                src="sap-icon://inspection"/>
+
+                        </TileContent>
+
+                    </GenericTile>
+
+                </HBox>
+
+
+                <!-- ================================================= -->
+                <!-- CHARTS                                            -->
+                <!-- 2 CHARTS PER ROW                                  -->
+                <!-- ================================================= -->
+
+                <Title
+                    id="analyticsTitle"
+                    text="Adoption Analytics"
+                    level="H2"
+                    class="sapUiLargeMarginTop sapUiMediumMarginBottom" />
+
+
+                <!-- ================================================= -->
+                <!-- ROW 1                                             -->
+                <!-- ADOPTION STATUS + ANIMAL CATEGORIES              -->
+                <!-- ================================================= -->
+
+                <HBox
+                    id="chartRow1"
+                    width="100%"
+                    justifyContent="SpaceBetween"
+                    alignItems="Start"
+                    wrap="Wrap"
+                    class="chartRow">
+
+
+                    <!-- ============================= -->
+                    <!-- ADOPTION STATUS               -->
+                    <!-- ============================= -->
+
+                    <VBox
+                        id="statusChartContainer"
+                        width="49%"
+                        class="chartCard">
+
+                        <Title
+                            id="statusChartTitle"
+                            text="Adoption Status"
+                            level="H3"
+                            class="chartTitle" />
+
+                        <viz:VizFrame
+                            id="statusChart"
+                            vizType="donut"
+                            width="100%"
+                            height="350px"
+                            vizProperties='{"title":{"visible":false}}'>
+
+                            <viz:dataset>
+
+                                <viz.data:FlattenedDataset
+                                    id="statusDataset"
+                                    data="{chart>/}">
+
+                                    <viz.data:dimensions>
+
+                                        <viz.data:DimensionDefinition
+                                            id="statusDimension"
+                                            name="Status"
+                                            value="{status}" />
+
+                                    </viz.data:dimensions>
+
+                                    <viz.data:measures>
+
+                                        <viz.data:MeasureDefinition
+                                            id="statusMeasure"
+                                            name="Count"
+                                            value="{count}" />
+
+                                    </viz.data:measures>
+
+                                </viz.data:FlattenedDataset>
+
+                            </viz:dataset>
+
+
+                            <viz:feeds>
+
+                                <viz.feeds:FeedItem
+                                    id="statusSizeFeed"
+                                    uid="size"
+                                    type="Measure"
+                                    values="Count" />
+
+                                <viz.feeds:FeedItem
+                                    id="statusColorFeed"
+                                    uid="color"
+                                    type="Dimension"
+                                    values="Status" />
+
+                            </viz:feeds>
+
+                        </viz:VizFrame>
+
+                    </VBox>
+
+
+                    <!-- ============================= -->
+                    <!-- ANIMAL CATEGORIES             -->
+                    <!-- ============================= -->
+
+                    <VBox
+                        id="categoryChartContainer"
+                        width="49%"
+                        class="chartCard">
+
+                        <Title
+                            id="categoryChartTitle"
+                            text="Animal Categories"
+                            level="H3"
+                            class="chartTitle" />
+
+                        <viz:VizFrame
+                            id="categoryChart"
+                            vizType="column"
+                            width="100%"
+                            height="350px"
+                            vizProperties='{"title":{"visible":false}}'>
+
+                            <viz:dataset>
+
+                                <viz.data:FlattenedDataset
+                                    id="categoryDataset"
+                                    data="{category>/}">
+
+                                    <viz.data:dimensions>
+
+                                        <viz.data:DimensionDefinition
+                                            id="categoryDimension"
+                                            name="Species"
+                                            value="{species}" />
+
+                                    </viz.data:dimensions>
+
+                                    <viz.data:measures>
+
+                                        <viz.data:MeasureDefinition
+                                            id="categoryMeasure"
+                                            name="Animals"
+                                            value="{count}" />
+
+                                    </viz.data:measures>
+
+                                </viz.data:FlattenedDataset>
+
+                            </viz:dataset>
+
+
+                            <viz:feeds>
+
+                                <viz.feeds:FeedItem
+                                    id="categoryValueFeed"
+                                    uid="valueAxis"
+                                    type="Measure"
+                                    values="Animals" />
+
+                                <viz.feeds:FeedItem
+                                    id="categoryCategoryFeed"
+                                    uid="categoryAxis"
+                                    type="Dimension"
+                                    values="Species" />
+
+                            </viz:feeds>
+
+                        </viz:VizFrame>
+
+                    </VBox>
+
+                </HBox>
+
+
+                <!-- ================================================= -->
+                <!-- ROW 2                                             -->
+                <!-- MONTHLY TREND + SHELTER CAPACITY                 -->
+                <!-- ================================================= -->
+
+                <HBox
+                    id="chartRow2"
+                    width="100%"
+                    justifyContent="SpaceBetween"
+                    alignItems="Start"
+                    wrap="Wrap"
+                    class="chartRow sapUiMediumMarginTop">
+
+
+                    <!-- ============================= -->
+                    <!-- MONTHLY ADOPTION TREND        -->
+                    <!-- ============================= -->
+
+                    <VBox
+                        id="trendChartContainer"
+                        width="49%"
+                        class="chartCard">
+
+                        <Title
+                            id="trendChartTitle"
+                            text="Monthly Adoption Trend"
+                            level="H3"
+                            class="chartTitle" />
+
+                        <viz:VizFrame
+                            id="trendChart"
+                            vizType="line"
+                            width="100%"
+                            height="350px"
+                            vizProperties='{"title":{"visible":false}}'>
+
+                            <viz:dataset>
+
+                                <viz.data:FlattenedDataset
+                                    id="trendDataset"
+                                    data="{trend>/}">
+
+                                    <viz.data:dimensions>
+
+                                        <viz.data:DimensionDefinition
+                                            id="trendDimension"
+                                            name="Month"
+                                            value="{month}" />
+
+                                    </viz.data:dimensions>
+
+                                    <viz.data:measures>
+
+                                        <viz.data:MeasureDefinition
+                                            id="trendMeasure"
+                                            name="Adoptions"
+                                            value="{count}" />
+
+                                    </viz.data:measures>
+
+                                </viz.data:FlattenedDataset>
+
+                            </viz:dataset>
+
+
+                            <viz:feeds>
+
+                                <viz.feeds:FeedItem
+                                    id="trendValueFeed"
+                                    uid="valueAxis"
+                                    type="Measure"
+                                    values="Adoptions" />
+
+                                <viz.feeds:FeedItem
+                                    id="trendCategoryFeed"
+                                    uid="categoryAxis"
+                                    type="Dimension"
+                                    values="Month" />
+
+                            </viz:feeds>
+
+                        </viz:VizFrame>
+
+                    </VBox>
+
+
+                    <!-- ============================= -->
+                    <!-- SHELTER CAPACITY              -->
+                    <!-- ============================= -->
+
+                    <VBox
+                        id="shelterChartContainer"
+                        width="49%"
+                        class="chartCard">
+
+                        <Title
+                            id="shelterChartTitle"
+                            text="Shelter Capacity"
+                            level="H3"
+                            class="chartTitle" />
+
+                        <viz:VizFrame
+                            id="shelterChart"
+                            vizType="column"
+                            width="100%"
+                            height="350px"
+                            vizProperties='{"title":{"visible":false}}'>
+
+                            <viz:dataset>
+
+                                <viz.data:FlattenedDataset
+                                    id="shelterDataset"
+                                    data="{shelter>/}">
+
+                                    <viz.data:dimensions>
+
+                                        <viz.data:DimensionDefinition
+                                            id="shelterNameDimension"
+                                            name="Shelter"
+                                            value="{shelterName}" />
+
+                                    </viz.data:dimensions>
+
+                                    <viz.data:measures>
+
+                                        <viz.data:MeasureDefinition
+                                            id="shelterCapacityMeasure"
+                                            name="Capacity"
+                                            value="{capacity}" />
+
+                                        <viz.data:MeasureDefinition
+                                            id="shelterOccupancyMeasure"
+                                            name="Current Occupancy"
+                                            value="{currentOccupancy}" />
+
+                                    </viz.data:measures>
+
+                                </viz.data:FlattenedDataset>
+
+                            </viz:dataset>
+
+
+                            <viz:feeds>
+
+                                <viz.feeds:FeedItem
+                                    id="shelterValueFeed"
+                                    uid="valueAxis"
+                                    type="Measure"
+                                    values="Capacity,Current Occupancy" />
+
+                                <viz.feeds:FeedItem
+                                    id="shelterCategoryFeed"
+                                    uid="categoryAxis"
+                                    type="Dimension"
+                                    values="Shelter" />
+
+                            </viz:feeds>
+
+                        </viz:VizFrame>
+
+                    </VBox>
+
+                </HBox>
+
+            </VBox>
+
+        </content>
+
+    </Page>
+
+</mvc:View>

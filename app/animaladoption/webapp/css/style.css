@@ -1,0 +1,288 @@
+/* ==========================================
+   MAIN DASHBOARD
+   ========================================== */
+
+.dashboardPage {
+    background: #f6f8fb;
+}
+
+.dashboardContainer {
+    padding: 24px;
+    background: #f6f8fb;
+}
+
+
+/* ==========================================
+   HERO SECTION
+   ========================================== */
+
+.heroSection {
+    min-height: 180px;
+    padding: 24px 32px;
+    margin-bottom: 24px;
+
+    background: linear-gradient(
+        135deg,
+        #fff4df,
+        #fffaf2,
+        #eef8ff
+    );
+
+    border-radius: 18px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.heroTextBox {
+    width: 55%;
+}
+
+.heroTitle {
+    font-size: 30px !important;
+    font-weight: 700;
+    color: #243447;
+}
+
+.heroSubtitle {
+    font-size: 18px;
+    color: #6a4a2b;
+    margin-top: 8px;
+}
+
+.heroDescription {
+    font-size: 14px;
+    color: #64748b;
+    margin-top: 6px;
+}
+
+.heroImage {
+    width: 150px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 18px;
+    margin-right: 15px;
+}
+
+.heroImageSmall {
+    width: 120px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+
+/* ==========================================
+   SECTION TITLES
+   ========================================== */
+
+.sectionTitle {
+    font-size: 21px !important;
+    font-weight: 700;
+    color: #243447;
+    margin-top: 22px;
+    margin-bottom: 14px;
+}
+
+
+/* ==========================================
+   KPI TILES
+   ========================================== */
+
+.kpiContainer {
+    width: 100%;
+}
+
+.kpiTile {
+    width: 15.5% !important;
+    min-width: 150px;
+
+    border-radius: 16px !important;
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,0.10);
+
+    transition: transform 0.2s ease;
+}
+
+.kpiTile:hover {
+    transform: translateY(-4px);
+}
+
+.kpiBlue {
+    border-top: 5px solid #2196f3;
+}
+
+.kpiGreen {
+    border-top: 5px solid #4caf50;
+}
+
+.kpiPurple {
+    border-top: 5px solid #9c27b0;
+}
+
+.kpiOrange {
+    border-top: 5px solid #ff9800;
+}
+
+
+/* ==========================================
+   NAVIGATION TILES
+   ========================================== */
+
+.navigationContainer {
+    width: 100%;
+}
+
+.navigationTile {
+    width: 13.5% !important;
+    min-width: 145px;
+
+    border-radius: 15px !important;
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,0.09);
+
+    transition: transform 0.2s ease;
+}
+
+.navigationTile:hover {
+    transform: translateY(-5px);
+}
+
+.usersTile {
+    border-top: 4px solid #2196f3;
+}
+
+.shelterTile {
+    border-top: 4px solid #ff4081;
+}
+
+.animalTile {
+    border-top: 4px solid #ff9800;
+}
+
+.applicationTile {
+    border-top: 4px solid #9c27b0;
+}
+
+.adoptionTile {
+    border-top: 4px solid #f44336;
+}
+
+.healthTile {
+    border-top: 4px solid #009688;
+}
+
+.inspectionTile {
+    border-top: 4px solid #607d8b;
+}
+
+
+/* ==========================================
+   CHART ROWS
+   ========================================== */
+
+.chartRow {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+
+/* ==========================================
+   CHART CARDS
+   ========================================== */
+
+.chartCard {
+    width: 49%;
+    min-height: 390px;
+
+    padding: 16px;
+
+    background: white;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 3px 12px rgba(0,0,0,0.08);
+
+    box-sizing: border-box;
+}
+
+
+/* ==========================================
+   CHART TITLES
+   ========================================== */
+
+.chartTitle {
+    font-size: 18px !important;
+    font-weight: 700;
+
+    color: #243447;
+
+    margin-bottom: 2px;
+}
+
+.chartSubtitle {
+    font-size: 12px;
+    color: #718096;
+
+    margin-bottom: 8px;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 1000px) {
+
+    .kpiTile {
+        width: 31% !important;
+        margin-bottom: 12px;
+    }
+
+    .navigationTile {
+        width: 30% !important;
+        margin-bottom: 12px;
+    }
+
+    .chartRow {
+        flex-direction: column;
+    }
+
+    .chartCard {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .heroTextBox {
+        width: 60%;
+    }
+
+    .heroImageSmall {
+        display: none;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .dashboardContainer {
+        padding: 12px;
+    }
+
+    .kpiTile {
+        width: 48% !important;
+    }
+
+    .navigationTile {
+        width: 48% !important;
+    }
+
+    .heroImage {
+        display: none;
+    }
+
+    .heroTextBox {
+        width: 100%;
+    }
+}

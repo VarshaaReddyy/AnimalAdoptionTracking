@@ -1,0 +1,182 @@
+<mvc:View
+    controllerName="animal.adoption.userdashboard.controller.Dashboard"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page
+        id="dashboardPage"
+        title="User Dashboard">
+
+        <content>
+
+            <VBox
+                id="mainVBox"
+                class="sapUiMediumMargin">
+
+                <Title
+                    id="userDashboardTitle"
+                    text="Welcome to Animal Adoption Tracker" />
+
+                <Title
+                    id="summaryTitle"
+                    text="My Summary"
+                    level="H3"
+                    class="sapUiMediumMarginTop" />
+
+                <!-- KPI CARDS -->
+
+                <HBox
+                    id="kpiHBox"
+                    wrap="Wrap"
+                    justifyContent="SpaceAround">
+
+                    <GenericTile
+                        id="totalApplicationsTile"
+                        header="Total Applications"
+                        class="sapUiSmallMargin">
+
+                        <TileContent
+                            id="totalApplicationsContent">
+
+                            <NumericContent
+                                id="totalApplicationsCount"
+                                value="{dashboard>/totalApplications}" />
+
+                        </TileContent>
+
+                    </GenericTile>
+
+                    <GenericTile
+                        id="pendingApplicationsTile"
+                        header="Pending Applications"
+                        class="sapUiSmallMargin">
+
+                        <TileContent
+                            id="pendingApplicationsContent">
+
+                            <NumericContent
+                                id="pendingApplicationsCount"
+                                value="{dashboard>/pendingApplications}"
+                                valueColor="Critical" />
+
+                        </TileContent>
+
+                    </GenericTile>
+
+                    <GenericTile
+                        id="approvedApplicationsTile"
+                        header="Approved Applications"
+                        class="sapUiSmallMargin">
+
+                        <TileContent
+                            id="approvedApplicationsContent">
+
+                            <NumericContent
+                                id="approvedApplicationsCount"
+                                value="{dashboard>/approvedApplications}"
+                                valueColor="Good" />
+
+                        </TileContent>
+
+                    </GenericTile>
+
+                    
+
+                </HBox>
+
+                <Title
+                    id="servicesTitle"
+                    text="Services"
+                    level="H3"
+                    class="sapUiLargeMarginTop sapUiMediumMarginBottom" />
+
+                <!-- NAVIGATION TILES -->
+
+                <HBox
+                    id="navigationHBox"
+                    wrap="Wrap"
+                    justifyContent="SpaceAround">
+
+                    <GenericTile
+                        id="browseAnimalsTile"
+                        header="Browse Animals"
+                        subheader="View Available Animals"
+                        press=".onBrowseAnimalsPress"
+                        class="sapUiSmallMargin">
+
+                        <TileContent
+                            id="browseAnimalsTileContent">
+
+                            <ImageContent
+                                id="browseAnimalsImage"
+                                src="sap-icon://pet-care" />
+
+                        </TileContent>
+
+                    </GenericTile>
+
+                    <GenericTile
+                        id="myApplicationsTile"
+                        header="My Applications"
+                        subheader="Track Requests"
+                        press=".onMyApplicationsPress"
+                        class="sapUiSmallMargin">
+
+                        <TileContent
+                            id="myApplicationsTileContent">
+
+                            <ImageContent
+                                id="myApplicationsImage"
+                                src="sap-icon://document" />
+
+                        </TileContent>
+
+                    </GenericTile>
+
+                    <GenericTile
+                        id="myAdoptionsTile"
+                        header="My Adoptions"
+                        subheader="Adoption History"
+                        press=".onMyAdoptionsPress"
+                        class="sapUiSmallMargin">
+
+                        <TileContent
+                            id="myAdoptionsTileContent">
+
+                            <ImageContent
+                                id="myAdoptionsImage"
+                                src="sap-icon://accept" />
+
+                        </TileContent>
+
+                    </GenericTile>
+
+                    <GenericTile
+                        id="profileTile"
+                        header="My Profile"
+                        subheader="Manage Profile"
+                        press=".onProfilePress"
+                        class="sapUiSmallMargin">
+
+                        <TileContent
+                            id="profileTileContent">
+
+                            <ImageContent
+                                id="profileImage"
+                                src="sap-icon://employee" />
+
+                        </TileContent>
+
+                    </GenericTile>
+
+                    
+
+                </HBox>
+
+            </VBox>
+
+        </content>
+
+    </Page>
+
+</mvc:View>
