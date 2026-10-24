@@ -2,7 +2,7 @@
 
 specVersion: "4.0"
 metadata:
-  name: animal.adoption.userapplications
+  name: userapplications
 type: application
 server:
   customMiddleware:

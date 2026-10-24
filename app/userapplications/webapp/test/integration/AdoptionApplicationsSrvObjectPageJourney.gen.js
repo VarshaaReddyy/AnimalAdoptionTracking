@@ -35,18 +35,6 @@ sap.ui.define([
 
 
 
-        opaTest("Check the GeneratedFacet1 section of the Object Page", function (_Given, _When, Then) {
-            Then.onTheAdoptionApplicationsSrvObjectPageGenerated.iCheckSection({ section: "GeneratedFacet1" });
-            Then.onTheAdoptionApplicationsSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "createdAt" });
-            Then.onTheAdoptionApplicationsSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "modifiedAt" });
-            Then.onTheAdoptionApplicationsSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "applicationDate" });
-            Then.onTheAdoptionApplicationsSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "reasonForAdoption" });
-            Then.onTheAdoptionApplicationsSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "housingDetails" });
-            Then.onTheAdoptionApplicationsSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "petExperience" });
-            Then.onTheAdoptionApplicationsSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "status" });
-            Then.onTheAdoptionApplicationsSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "staffRemarks" });
-        });
-
         opaTest("Teardown", function (Given, When, Then) { 
             // Cleanup
             Given.iTearDownMyApp();

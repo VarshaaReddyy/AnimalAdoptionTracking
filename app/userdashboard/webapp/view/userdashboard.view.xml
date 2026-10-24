@@ -1,0 +1,39 @@
+
+<mvc:View
+    controllerName="animal.adoption.userdashboard.controller.Dashboard"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page
+        id="userDashboardPage"
+        title="User Dashboard">
+
+        <content>
+
+            <VBox
+                id="userDashboardMainVBox"
+                class="sapUiMediumMargin">
+
+                <Title
+                    id="userDashboardWelcomeTitle"
+                    text="Welcome to Animal Adoption Tracker"
+                    level="H1" />
+
+                <Text
+                    id="userDashboardTestMessage"
+                    text="User Dashboard is working successfully!"
+                    class="sapUiMediumMarginTop" />
+
+                <Button
+                    id="userDashboardTestButton"
+                    text="Test Dashboard"
+                    press=".onTestPress"
+                    class="sapUiMediumMarginTop" />
+
+            </VBox>
+
+        </content>
+
+    </Page>
+
+</mvc:View>

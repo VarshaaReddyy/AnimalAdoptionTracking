@@ -25,7 +25,7 @@ sap.ui.define(['sap/fe/test/ListReport'], function(ListReport) {
 
     return new ListReport(
         {
-            appId: 'animal.adoption.userapplications',
+            appId: 'userapplications',
             componentId: 'AdoptionApplicationsSrvList',
             contextPath: '/AdoptionApplicationsSrv'
         },

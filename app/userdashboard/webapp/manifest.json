@@ -13,11 +13,11 @@
     "sourceTemplate": {
       "id": "@sap/generator-fiori:basic",
       "version": "1.33.0",
-      "toolsId": "602988ad-6250-4d7d-90f2-fdf89b5dd714"
+      "toolsId": "2fa5de8a-819d-4a3d-b45b-919304a6f3ca"
     },
     "dataSources": {
       "mainService": {
-        "uri": "/odata/v4/catalog/",
+        "uri": "/odata/v4/user-catalog/",
         "type": "OData",
         "settings": {
           "annotations": [],
@@ -93,17 +93,17 @@
       },
       "routes": [
         {
-          "name": "RouteDashboard",
+          "name": "Routeuserdashboard",
           "pattern": ":?query:",
           "target": [
-            "TargetDashboard"
+            "Targetuserdashboard"
           ]
         }
       ],
       "targets": {
-        "TargetDashboard": {
-          "id": "Dashboard",
-          "name": "Dashboard"
+        "Targetuserdashboard": {
+          "id": "userdashboard",
+          "name": "userdashboard"
         }
       }
     },

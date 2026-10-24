@@ -1,16 +1,16 @@
 ## Application Details
 |               |
 | ------------- |
-|**Generation Date and Time**<br>Thu Oct 22 2026 04:06:21 GMT+0000 (Coordinated Universal Time)|
+|**Generation Date and Time**<br>Sat Oct 24 2026 09:54:17 GMT+0000 (Coordinated Universal Time)|
 |**App Generator**<br>SAP Fiori Application Generator|
 |**App Generator Version**<br>1.33.0|
 |**Generation Platform**<br>SAP Business Application Studio|
 |**Template Used**<br>List Report Page V4|
 |**Service Type**<br>Local CAP|
-|**Service URL**<br>http://localhost:4004/odata/v4/catalog/|
+|**Service URL**<br>http://localhost:4004/odata/v4/user-catalog/|
 |**Module Name**<br>userapplications|
 |**Application Title**<br>My Applications|
-|**Namespace**<br>animal.adoption|
+|**Namespace**<br>|
 |**UI5 Theme**<br>sap_horizon|
 |**UI5 Version**<br>1.153.0|
 |**Enable TypeScript**<br>False|
@@ -25,7 +25,7 @@ An SAP Fiori application.
 
 -   This app has been generated using the SAP Fiori tools - App Generator, as part of the SAP Fiori tools suite.  To launch the generated app, start your CAP project:  and navigate to the following location in your browser:
 
-http://localhost:4004/animal.adoption.userapplications/index.html
+http://localhost:4004/userapplications/index.html
 
 #### Pre-requisites:
 

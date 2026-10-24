@@ -25,7 +25,7 @@ sap.ui.define(['sap/fe/test/ObjectPage'], function(ObjectPage) {
 
     return new ObjectPage(
         {
-            appId: 'animal.adoption.userapplications',
+            appId: 'userapplications',
             componentId: 'AdoptionApplicationsSrvObjectPage',
             contextPath: '/AdoptionApplicationsSrv'
         },

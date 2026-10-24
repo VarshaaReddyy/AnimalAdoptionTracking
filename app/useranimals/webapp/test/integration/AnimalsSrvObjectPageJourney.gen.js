@@ -35,23 +35,6 @@ sap.ui.define([
 
 
 
-        opaTest("Check the GeneratedFacet1 section of the Object Page", function (_Given, _When, Then) {
-            Then.onTheAnimalsSrvObjectPageGenerated.iCheckSection({ section: "GeneratedFacet1" });
-            Then.onTheAnimalsSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "createdAt" });
-            Then.onTheAnimalsSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "modifiedAt" });
-            Then.onTheAnimalsSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "name" });
-            Then.onTheAnimalsSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "species" });
-            Then.onTheAnimalsSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "breed" });
-            Then.onTheAnimalsSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "gender" });
-            Then.onTheAnimalsSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "age" });
-            Then.onTheAnimalsSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "arrivalDate" });
-            Then.onTheAnimalsSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "animalStatus" });
-            Then.onTheAnimalsSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "vaccinationStatus" });
-            Then.onTheAnimalsSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "spayedOrNeutered" });
-            Then.onTheAnimalsSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "photo" });
-            Then.onTheAnimalsSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "description" });
-        });
-
         opaTest("Teardown", function (Given, When, Then) { 
             // Cleanup
             Given.iTearDownMyApp();

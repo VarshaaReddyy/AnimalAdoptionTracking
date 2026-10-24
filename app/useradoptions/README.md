@@ -1,13 +1,13 @@
 ## Application Details
 |               |
 | ------------- |
-|**Generation Date and Time**<br>Thu Oct 22 2026 04:07:47 GMT+0000 (Coordinated Universal Time)|
+|**Generation Date and Time**<br>Sat Oct 24 2026 09:55:55 GMT+0000 (Coordinated Universal Time)|
 |**App Generator**<br>SAP Fiori Application Generator|
 |**App Generator Version**<br>1.33.0|
 |**Generation Platform**<br>SAP Business Application Studio|
 |**Template Used**<br>List Report Page V4|
 |**Service Type**<br>Local CAP|
-|**Service URL**<br>http://localhost:4004/odata/v4/catalog/|
+|**Service URL**<br>http://localhost:4004/odata/v4/user-catalog/|
 |**Module Name**<br>useradoptions|
 |**Application Title**<br>My Adoptions|
 |**Namespace**<br>animal.adoption|
@@ -16,7 +16,6 @@
 |**Enable TypeScript**<br>False|
 |**Add Eslint configuration**<br>True, see https://www.npmjs.com/package/@sap-ux/eslint-plugin-fiori-tools#rules for the eslint rules.|
 |**Main Entity**<br>AdoptionsSrv|
-|**Navigation Entity**<br>None|
 
 ## useradoptions
 

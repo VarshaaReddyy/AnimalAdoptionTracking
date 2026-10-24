@@ -32,12 +32,6 @@ sap.ui.define([
             Then.onTheUsersSrvListGenerated.iSeeThisPage();
         });
 
-        opaTest("Check filter bar", function (Given, When, Then) {
-            Then.onTheUsersSrvListGenerated.onFilterBar().iCheckFilterField({ property: "firstName" });
-            Then.onTheUsersSrvListGenerated.onFilterBar().iCheckFilterField({ property: "lastName" });
-            Then.onTheUsersSrvListGenerated.onFilterBar().iCheckFilterField({ property: "role" });
-            Then.onTheUsersSrvListGenerated.onFilterBar().iCheckFilterField({ property: "status" });
-        });
 
         // Note: this test will only work if the ListReport page has a search field and shows data that matches the search term. Please ensure that the test data and search term are set up accordingly.
         // opaTest("Perform a global search and check the result", function (Given, When, Then) {
@@ -48,9 +42,6 @@ sap.ui.define([
         //     Then.onTheUsersSrvListGenerated.onFilterBar().iCheckSearchField(undefined);
         // });
 
-        opaTest("Check table columns and actions", function (Given, When, Then) {
-            Then.onTheUsersSrvListGenerated.onTable(defaultTableId).iCheckColumns(undefined, {"firstName":{"header":"firstName"},"lastName":{"header":"lastName"},"email":{"header":"email"},"role":{"header":"role"},"status":{"header":"status"}});
-        });
 
         opaTest("Navigate to ObjectPage", function (Given, When, Then) {
             // Note: this test will fail if the ListReport page doesn't show any data

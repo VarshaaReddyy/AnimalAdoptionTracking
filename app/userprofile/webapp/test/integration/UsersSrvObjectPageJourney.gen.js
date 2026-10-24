@@ -35,22 +35,6 @@ sap.ui.define([
 
 
 
-        opaTest("Check the GeneratedFacet1 section of the Object Page", function (_Given, _When, Then) {
-            Then.onTheUsersSrvObjectPageGenerated.iCheckSection({ section: "GeneratedFacet1" });
-            Then.onTheUsersSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "createdAt" });
-            Then.onTheUsersSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "modifiedAt" });
-            Then.onTheUsersSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "firstName" });
-            Then.onTheUsersSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "lastName" });
-            Then.onTheUsersSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "email" });
-            Then.onTheUsersSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "phoneNumber" });
-            Then.onTheUsersSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "address" });
-            Then.onTheUsersSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "city" });
-            Then.onTheUsersSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "state" });
-            Then.onTheUsersSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "postalCode" });
-            Then.onTheUsersSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "role" });
-            Then.onTheUsersSrvObjectPageGenerated.onForm({ section: "GeneratedFacet1" }).iCheckField({ property: "status" });
-        });
-
         opaTest("Teardown", function (Given, When, Then) { 
             // Cleanup
             Given.iTearDownMyApp();

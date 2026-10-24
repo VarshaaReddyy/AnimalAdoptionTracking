@@ -1,13 +1,13 @@
 ## Application Details
 |               |
 | ------------- |
-|**Generation Date and Time**<br>Wed Oct 21 2026 18:37:06 GMT+0000 (Coordinated Universal Time)|
+|**Generation Date and Time**<br>Sat Oct 24 2026 09:50:57 GMT+0000 (Coordinated Universal Time)|
 |**App Generator**<br>SAP Fiori Application Generator|
 |**App Generator Version**<br>1.33.0|
 |**Generation Platform**<br>SAP Business Application Studio|
 |**Template Used**<br>Basic V4|
 |**Service Type**<br>Local CAP|
-|**Service URL**<br>http://localhost:4004/odata/v4/catalog/|
+|**Service URL**<br>http://localhost:4004/odata/v4/user-catalog/|
 |**Module Name**<br>userdashboard|
 |**Application Title**<br>User Dashboard|
 |**Namespace**<br>animal.adoption|

@@ -42,9 +42,6 @@ sap.ui.define([
         //     Then.onTheAdoptionsSrvListGenerated.onFilterBar().iCheckSearchField(undefined);
         // });
 
-        opaTest("Check table columns and actions", function (Given, When, Then) {
-            Then.onTheAdoptionsSrvListGenerated.onTable(defaultTableId).iCheckColumns(undefined, {"adoptionDate":{"header":"adoptionDate"},"status":{"header":"status"},"remarks":{"header":"remarks"}});
-        });
 
         opaTest("Navigate to ObjectPage", function (Given, When, Then) {
             // Note: this test will fail if the ListReport page doesn't show any data

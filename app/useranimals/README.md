@@ -1,15 +1,15 @@
 ## Application Details
 |               |
 | ------------- |
-|**Generation Date and Time**<br>Sat Oct 24 2026 08:14:27 GMT+0000 (Coordinated Universal Time)|
+|**Generation Date and Time**<br>Sat Oct 24 2026 09:53:02 GMT+0000 (Coordinated Universal Time)|
 |**App Generator**<br>SAP Fiori Application Generator|
 |**App Generator Version**<br>1.33.0|
 |**Generation Platform**<br>SAP Business Application Studio|
 |**Template Used**<br>List Report Page V4|
 |**Service Type**<br>Local CAP|
-|**Service URL**<br>http://localhost:4004/odata/v4/catalog/|
+|**Service URL**<br>http://localhost:4004/odata/v4/user-catalog/|
 |**Module Name**<br>useranimals|
-|**Application Title**<br>Browse animals|
+|**Application Title**<br>Browse Animals|
 |**Namespace**<br>animal.adoption|
 |**UI5 Theme**<br>sap_horizon|
 |**UI5 Version**<br>1.153.0|

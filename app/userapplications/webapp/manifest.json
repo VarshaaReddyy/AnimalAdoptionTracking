@@ -1,7 +1,7 @@
 {
   "_version": "1.89.0",
   "sap.app": {
-    "id": "animal.adoption.userapplications",
+    "id": "userapplications",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -13,11 +13,11 @@
     "sourceTemplate": {
       "id": "@sap/generator-fiori:lrop",
       "version": "1.33.0",
-      "toolsId": "6fac9039-2176-4ff7-a285-60b50f45fcc6"
+      "toolsId": "e46b77ba-0495-4362-b984-bdc783db1768"
     },
     "dataSources": {
       "mainService": {
-        "uri": "/odata/v4/catalog/",
+        "uri": "/odata/v4/user-catalog/",
         "type": "OData",
         "settings": {
           "annotations": [],
@@ -60,7 +60,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "animal.adoption.userapplications.i18n.i18n"
+          "bundleName": "userapplications.i18n.i18n"
         }
       },
       "": {

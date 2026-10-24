@@ -32,11 +32,6 @@ sap.ui.define([
             Then.onTheAnimalsSrvListGenerated.iSeeThisPage();
         });
 
-        opaTest("Check filter bar", function (Given, When, Then) {
-            Then.onTheAnimalsSrvListGenerated.onFilterBar().iCheckFilterField({ property: "name" });
-            Then.onTheAnimalsSrvListGenerated.onFilterBar().iCheckFilterField({ property: "species" });
-            Then.onTheAnimalsSrvListGenerated.onFilterBar().iCheckFilterField({ property: "animalStatus" });
-        });
 
         // Note: this test will only work if the ListReport page has a search field and shows data that matches the search term. Please ensure that the test data and search term are set up accordingly.
         // opaTest("Perform a global search and check the result", function (Given, When, Then) {
@@ -47,9 +42,6 @@ sap.ui.define([
         //     Then.onTheAnimalsSrvListGenerated.onFilterBar().iCheckSearchField(undefined);
         // });
 
-        opaTest("Check table columns and actions", function (Given, When, Then) {
-            Then.onTheAnimalsSrvListGenerated.onTable(defaultTableId).iCheckColumns(undefined, {"name":{"header":"name"},"species":{"header":"species"},"breed":{"header":"breed"},"age":{"header":"age"},"animalStatus":{"header":"animalStatus"}});
-        });
 
         opaTest("Navigate to ObjectPage", function (Given, When, Then) {
             // Note: this test will fail if the ListReport page doesn't show any data

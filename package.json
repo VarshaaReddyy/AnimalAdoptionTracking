@@ -20,7 +20,7 @@
     "watch-userdashboard": "cds watch --open animal.adoption.userdashboard/index.html?sap-ui-xx-viewCache=false --livereload false",
     "watch-userprofile": "cds watch --open animal.adoption.userprofile/index.html?sap-ui-xx-viewCache=false --livereload false",
     "watch-useranimals": "cds watch --open animal.adoption.useranimals/index.html?sap-ui-xx-viewCache=false --livereload false",
-    "watch-userapplications": "cds watch --open animal.adoption.userapplications/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-userapplications": "cds watch --open userapplications/index.html?sap-ui-xx-viewCache=false --livereload false",
     "watch-useradoptions": "cds watch --open animal.adoption.useradoptions/index.html?sap-ui-xx-viewCache=false --livereload false",
     "watch-userinspections": "cds watch --open userinspections/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
@@ -52,6 +52,10 @@
     "app/useradoptions",
     "app/userinspections",
     "app/animalusers",
-    "app/useranimals"
+    "app/useranimals",
+    "app/useranimals",
+    "app/userapplications",
+    "app/useradoptions",
+    "app/userprofile"
   ]
 }
