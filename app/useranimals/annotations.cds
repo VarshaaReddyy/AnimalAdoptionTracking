@@ -104,6 +104,12 @@ annotate service.AnimalsSrv with @(
             Label : 'breed',
             Value : breed,
         },
+        {
+            $Type : 'UI.DataFieldForAction',
+            Action : 'UserCatalogService.applyForAdoption',
+            Label : 'Apply for Adoption'
+        }
+        
     ],
 );
 
@@ -133,6 +139,7 @@ annotate service.AnimalsSrv with {
                 $Type : 'Common.ValueListParameterDisplayOnly',
                 ValueListProperty : 'shelterCode',
             },
+            
         ],
     }
 };

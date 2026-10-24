@@ -1,5 +1,26 @@
 using CatalogService as service from '../../srv/cat-service';
 annotate service.HealthRecordsSrv with @(
+    UI.HeaderInfo : {
+        TypeName : 'Health Record',
+        TypeNamePlural : 'Health Records'
+    },
+
+    UI.LineItem : [
+        { Value : checkupDate },
+        { Value : healthStatus },
+        { Value : veterinarianName },
+        { Value : weight },
+        {
+    $Type : 'UI.DataFieldForAction',
+    Action : 'CatalogService.editHealthRecord',
+    Label : 'Edit Health Record'
+},
+        {
+    $Type : 'UI.DataFieldForAction',
+    Action : 'CatalogService.EntityContainer/createHealthRecord',
+    Label : 'Create Health Record'
+}
+    ],
     UI.FieldGroup #GeneratedGroup : {
         $Type : 'UI.FieldGroupType',
         Data : [

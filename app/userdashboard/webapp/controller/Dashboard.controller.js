@@ -28,6 +28,7 @@ sap.ui.define([
                 );
 
                 this._loadDashboardData();
+                this._loadApplications();
             },
 
             _loadDashboardData: function () {
@@ -91,7 +92,83 @@ sap.ui.define([
                         );
                     });
             },
+            _loadApplications: function () {
 
+            var oModel = new JSONModel();
+
+            this.getView().setModel(
+                oModel,
+                "applications"
+            );
+
+
+            var sUserId =
+                "21390C66-6925-49F2-BDD5-AF0838C335A5";
+
+
+            var sUrl =
+                "/odata/v4/user-catalog/AdoptionApplicationsSrv" +
+                "?$filter=applicant_ID eq " +
+                sUserId;
+
+
+            fetch(sUrl)
+                .then(function (oResponse) {
+
+                    if (!oResponse.ok) {
+
+                        throw new Error(
+                            "HTTP " + oResponse.status
+                        );
+
+                    }
+
+                    return oResponse.json();
+
+                })
+                .then(function (oResult) {
+
+                    console.log(
+                        "My Applications:",
+                        oResult
+                    );
+
+                    oModel.setData(
+                        oResult.value || []
+                    );
+
+                })
+                .catch(function (oError) {
+
+                    console.error(
+                        "Applications Error:",
+                        oError
+                    );
+
+                    MessageToast.show(
+                        "Unable to load applications"
+                    );
+
+                });
+
+        },
+        
+
+
+        onRefresh: function () {
+
+            this._loadApplications();
+
+        },
+
+
+        onNavBack: function () {
+
+            window.history.back();
+
+        },
+
+  
             onBrowseAnimalsPress: function () {
 
                 window.location.href =

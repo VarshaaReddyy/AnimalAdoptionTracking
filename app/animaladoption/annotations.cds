@@ -42,39 +42,22 @@ annotate CatalogService.SheltersSrv with @(
         { Value : city },
         { Value : state },
         { Value : capacity },
-        { Value : shelterType }
+        { Value : shelterType },
+        {
+    $Type : 'UI.DataFieldForAction',
+    Action : 'CatalogService.editShelter',
+    Label : 'Edit shelter'
+},
+        {
+    $Type : 'UI.DataFieldForAction',
+    Action : 'CatalogService.EntityContainer/createShelter',
+    Label : 'Create Shelter'
+}
     ]
 );
 
-annotate CatalogService.AnimalsSrv with @(
-    UI.HeaderInfo : {
-        TypeName : 'Animal',
-        TypeNamePlural : 'Animals'
-    },
 
-    UI.SelectionFields : [
-        name,
-        species,
-        animalStatus
-    ],
 
-    UI.LineItem : [
-        { Value : name },
-        { Value : species },
-        { Value : breed },
-        { Value : age },
-        { Value : animalStatus }
-    ]
-);
-
-annotate CatalogService.AdoptionApplicationsSrv with @(
-    UI.HeaderInfo : {
-        TypeName : 'Application',
-        TypeNamePlural : 'Applications'
-    }
-
-    
-);
 
 annotate CatalogService.AdoptionsSrv with @(
     UI.HeaderInfo : {
@@ -89,19 +72,7 @@ annotate CatalogService.AdoptionsSrv with @(
     ]
 );
 
-annotate CatalogService.HealthRecordsSrv with @(
-    UI.HeaderInfo : {
-        TypeName : 'Health Record',
-        TypeNamePlural : 'Health Records'
-    },
 
-    UI.LineItem : [
-        { Value : checkupDate },
-        { Value : healthStatus },
-        { Value : veterinarianName },
-        { Value : weight }
-    ]
-);
 
 annotate CatalogService.InspectionsSrv with @(
     UI.HeaderInfo : {
@@ -112,6 +83,16 @@ annotate CatalogService.InspectionsSrv with @(
     UI.LineItem : [
         { Value : inspectionDate },
         { Value : inspectionType },
-        { Value : result }
+        { Value : result },
+        {
+    $Type : 'UI.DataFieldForAction',
+    Action : 'CatalogService.editInspection',
+    Label : 'Edit Inspection'
+},
+        {
+    $Type : 'UI.DataFieldForAction',
+    Action : 'CatalogService.EntityContainer/createInspection',
+    Label : 'Create Inspection'
+}
     ]
 );

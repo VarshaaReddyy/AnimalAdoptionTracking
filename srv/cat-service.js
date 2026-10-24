@@ -17,6 +17,172 @@ module.exports = cds.service.impl(async function () {
     // ==========================================================
 // APPLICATION STATUS SUMMARY
 // ==========================================================
+this.on("editShelter", "SheltersSrv", async (req) => {
+
+    const ID = req.params[0].ID;
+
+    const {
+        shelterName,
+        shelterCode,
+        addressLine1,
+        addressLine2,
+        city,
+        state,
+        postalCode,
+        country,
+        contactNumber,
+        email,
+        website,
+        capacity,
+        currentOccupancy,
+        operatingTime,
+        closingTime,
+        shelterType,
+        licenseNumber
+    } = req.data;
+
+    await UPDATE("db.Shelters")
+        .set({
+            shelterName,
+            shelterCode,
+            addressLine1,
+            addressLine2,
+            city,
+            state,
+            postalCode,
+            country,
+            contactNumber,
+            email,
+            website,
+            capacity,
+            currentOccupancy,
+            operatingTime,
+            closingTime,
+            shelterType,
+            licenseNumber,
+            modifiedAt: new Date()
+        })
+        .where({ ID });
+
+    return await SELECT.one
+        .from("db.Shelters")
+        .where({ ID });
+});
+
+this.on("editHealthRecord", "HealthRecordsSrv", async (req) => {
+
+    const ID = req.params[0].ID;
+
+    const {
+        animalID,
+        checkupDate,
+        healthStatus,
+        diagnosis,
+        treatment,
+        medication,
+        veterinarianName,
+        weight,
+        nextCheckupDate,
+        remarks,
+        medicalDocument
+    } = req.data;
+
+    await UPDATE("db.HealthRecords")
+        .set({
+            animal_ID: animalID,
+            checkupDate,
+            healthStatus,
+            diagnosis,
+            treatment,
+            medication,
+            veterinarianName,
+            weight,
+            nextCheckupDate,
+            remarks,
+            medicalDocument,
+            modifiedAt: new Date()
+        })
+        .where({ ID });
+
+    return await SELECT.one
+        .from("db.HealthRecords")
+        .where({ ID });
+});
+
+this.on("editInspection", "InspectionsSrv", async (req) => {
+
+    const ID = req.params[0].ID;
+
+    const {
+        adoptionID,
+        inspectorID,
+        inspectionDate,
+        inspectionType,
+        existingPetDetails,
+        result,
+        remarks,
+        inspectionDocument
+    } = req.data;
+
+    await UPDATE("db.Inspections")
+        .set({
+            adoption_ID: adoptionID,
+            inspector_ID: inspectorID,
+            inspectionDate,
+            inspectionType,
+            existingPetDetails,
+            result,
+            remarks,
+            inspectionDocument,
+            modifiedAt: new Date()
+        })
+        .where({ ID });
+
+    return await SELECT.one
+        .from("db.Inspections")
+        .where({ ID });
+});
+this.on("editAnimal", "AnimalsSrv", async (req) => {
+
+    const animalID = req.params[0].ID;
+
+    const {
+        shelterID,
+        name,
+        species,
+        breed,
+        gender,
+        age,
+        arrivalDate,
+        animalStatus,
+        vaccinationStatus,
+        spayedOrNeutered,
+        photo,
+        description
+    } = req.data;
+
+    await UPDATE(AnimalsSrv)
+        .set({
+            shelter_ID: shelterID,
+            name,
+            species,
+            breed,
+            gender,
+            age,
+            arrivalDate,
+            animalStatus,
+            vaccinationStatus,
+            spayedOrNeutered,
+            photo,
+            description,
+            modifiedAt: new Date()
+        })
+        .where({ ID: animalID });
+
+    return await SELECT.one
+        .from(AnimalsSrv)
+        .where({ ID: animalID });
+});
 
 this.on("READ", "ApplicationStatusSummary", async () => {
 

@@ -1,5 +1,56 @@
 using CatalogService as service from '../../srv/cat-service';
+annotate service.AnimalsSrv with @(
+    UI.HeaderInfo : {
+        TypeName : 'Animal',
+        TypeNamePlural : 'Animals'
+    },
 
+    UI.SelectionFields : [
+        name,
+        species,
+        animalStatus
+    ],
+
+    UI.LineItem : [
+    {
+        $Type : 'UI.DataField',
+        Value : name,
+        Label : 'Name'
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : species,
+        Label : 'Species'
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : breed,
+        Label : 'Breed'
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : age,
+        Label : 'Age'
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : animalStatus,
+        Label : 'Status'
+    },
+    {
+        $Type : 'UI.DataFieldForAction',
+        Action : 'CatalogService.editAnimal',
+        Label : 'Edit Animal'
+    },
+    {
+        $Type : 'UI.DataFieldForAction',
+        Action : 'CatalogService.EntityContainer/createAnimal',
+        Label : 'Create Animal'
+    }
+
+],
+    
+);
 annotate service.AnimalsSrv with @(
     UI.FieldGroup #GeneratedGroup : {
         $Type : 'UI.FieldGroupType',
@@ -79,6 +130,7 @@ annotate service.AnimalsSrv with @(
             Target : '@UI.FieldGroup#GeneratedGroup',
         },
     ],
+    
 
 
     

@@ -70,7 +70,19 @@ service UserCatalogService {
     // this to the logged-in user's own profile.
     // ==========================================================
 
-    entity UsersSrv as projection on my.Users;
+    entity UsersSrv as projection on my.Users
+    actions {
+        action editProfile(
+            firstName   : String,
+            lastName    : String,
+            email       : String,
+            phoneNumber : String,
+            address     : String,
+            city        : String,
+            state       : String,
+            postalCode  : String
+        ) returns UsersSrv;
+    };
 
 
     // ==========================================================

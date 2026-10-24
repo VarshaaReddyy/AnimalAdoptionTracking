@@ -99,6 +99,11 @@ annotate service.UsersSrv with @(
             Label : 'email',
             Value : email,
         },
+        {
+            $Type : 'UI.DataFieldForAction',
+            Action : 'UserCatalogService.editProfile',
+            Label : 'Edit Profile'
+        }
     ],
 );
 

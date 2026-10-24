@@ -6,58 +6,76 @@
 
     <Page
         id="userDashboardPage"
-        title="User Dashboard">
+        title="Animal Adoption Tracker"
+        class="userDashboardPage">
 
         <content>
 
             <VBox
                 id="userDashboardMainVBox"
-                class="sapUiMediumMargin">
+                class="dashboardContainer">
 
-                <Title
-                    id="userDashboardWelcomeTitle"
-                    text="Welcome to Animal Adoption Tracker"
-                    level="H1" />
+                <!-- WELCOME -->
+                <VBox
+                    id="userDashboardWelcomeBox"
+                    class="welcomeSection">
 
-                <Text
-                    id="userDashboardWelcomeText"
-                    text="Manage your applications, adoptions and profile in one place."
-                    class="sapUiSmallMarginBottom" />
+                    <Title
+                        id="userDashboardWelcomeTitle"
+                        text="Welcome to Animal Adoption Tracker"
+                        level="H1"
+                        class="welcomeTitle" />
 
+                    <Text
+                        id="userDashboardWelcomeText"
+                        text="Manage your applications, adoptions and profile in one place."
+                        class="welcomeText" />
+
+                </VBox>
+
+
+                <!-- SUMMARY -->
                 <Title
                     id="userDashboardSummaryTitle"
                     text="My Summary"
                     level="H2"
-                    class="sapUiLargeMarginTop sapUiMediumMarginBottom" />
+                    class="sectionTitle" />
 
-                <!-- SUMMARY CARDS -->
 
+                <!-- KPI CARDS -->
                 <HBox
                     id="userDashboardSummaryHBox"
                     width="100%"
                     justifyContent="SpaceBetween"
-                    wrap="Wrap">
+                    wrap="NoWrap"
+                    class="kpiRow">
 
+
+                    <!-- APPLICATIONS -->
                     <GenericTile
                         id="userDashboardApplicationsTile"
                         header="My Applications"
-                        class="sapUiSmallMargin">
+                        class="dashboardKpiTile applicationsTile">
 
                         <TileContent
                             id="userDashboardApplicationsContent">
 
                             <NumericContent
                                 id="userDashboardApplicationsValue"
-                                value="{dashboard>/myApplications}" />
+                                value="{dashboard>/myApplications}"
+                                icon="sap-icon://document-text"
+                                valueColor="Neutral" />
 
                         </TileContent>
 
                     </GenericTile>
 
+
+                    <!-- PENDING -->
                     <GenericTile
                         id="userDashboardPendingTile"
                         header="Pending Applications"
-                        class="sapUiSmallMargin">
+                        class="dashboardKpiTile pendingTile">
 
                         <TileContent
                             id="userDashboardPendingContent">
@@ -65,16 +83,19 @@
                             <NumericContent
                                 id="userDashboardPendingValue"
                                 value="{dashboard>/pendingApplications}"
+                                icon="sap-icon://pending"
                                 valueColor="Critical" />
 
                         </TileContent>
 
                     </GenericTile>
 
+
+                    <!-- APPROVED -->
                     <GenericTile
                         id="userDashboardApprovedTile"
                         header="Approved Applications"
-                        class="sapUiSmallMargin">
+                        class="dashboardKpiTile approvedTile">
 
                         <TileContent
                             id="userDashboardApprovedContent">
@@ -82,6 +103,7 @@
                             <NumericContent
                                 id="userDashboardApprovedValue"
                                 value="{dashboard>/approvedApplications}"
+                                icon="sap-icon://accept"
                                 valueColor="Good" />
 
                         </TileContent>
@@ -90,26 +112,30 @@
 
                 </HBox>
 
-                <!-- SERVICES -->
 
+                <!-- SERVICES -->
                 <Title
                     id="userDashboardServicesTitle"
                     text="Services"
                     level="H2"
-                    class="sapUiLargeMarginTop sapUiMediumMarginBottom" />
+                    class="sectionTitle servicesSectionTitle" />
+
 
                 <HBox
                     id="userDashboardServicesHBox"
                     width="100%"
                     justifyContent="SpaceBetween"
-                    wrap="Wrap">
+                    wrap="NoWrap"
+                    class="servicesRow">
 
+
+                    <!-- BROWSE ANIMALS -->
                     <GenericTile
                         id="userDashboardBrowseAnimalsTile"
                         header="Browse Animals"
                         subheader="View Available Animals"
                         press=".onBrowseAnimalsPress"
-                        class="sapUiSmallMargin">
+                        class="serviceTile animalsServiceTile">
 
                         <TileContent
                             id="userDashboardBrowseAnimalsContent">
@@ -122,30 +148,34 @@
 
                     </GenericTile>
 
+
+                    <!-- APPLICATIONS -->
                     <GenericTile
                         id="userDashboardApplicationsServiceTile"
                         header="My Applications"
                         subheader="Track Requests"
                         press=".onMyApplicationsPress"
-                        class="sapUiSmallMargin">
+                        class="serviceTile applicationsServiceTile">
 
                         <TileContent
                             id="userDashboardApplicationsServiceContent">
 
                             <ImageContent
                                 id="userDashboardApplicationsServiceIcon"
-                                src="sap-icon://document" />
+                                src="sap-icon://document-text" />
 
                         </TileContent>
 
                     </GenericTile>
 
+
+                    <!-- ADOPTIONS -->
                     <GenericTile
                         id="userDashboardAdoptionsTile"
                         header="My Adoptions"
                         subheader="Adoption History"
                         press=".onMyAdoptionsPress"
-                        class="sapUiSmallMargin">
+                        class="serviceTile adoptionsServiceTile">
 
                         <TileContent
                             id="userDashboardAdoptionsContent">
@@ -158,12 +188,14 @@
 
                     </GenericTile>
 
+
+                    <!-- PROFILE -->
                     <GenericTile
                         id="userDashboardProfileTile"
                         header="My Profile"
                         subheader="Manage Profile"
                         press=".onProfilePress"
-                        class="sapUiSmallMargin">
+                        class="serviceTile profileServiceTile">
 
                         <TileContent
                             id="userDashboardProfileContent">
@@ -177,6 +209,137 @@
                     </GenericTile>
 
                 </HBox>
+
+
+                <!-- APPLICATIONS SECTION -->
+
+                <VBox
+                    id="userApplicationsSection"
+                    class="applicationsCard">
+
+                    <HBox
+                        id="myApplicationsHeader"
+                        justifyContent="SpaceBetween"
+                        alignItems="Center">
+
+                        <VBox
+                            id="myApplicationsHeadingBox">
+
+                            <Title
+                                id="myApplicationsTitle"
+                                text="My Adoption Applications"
+                                level="H2"
+                                class="applicationsTitle" />
+
+                            <Text
+                                id="myApplicationsSubtitle"
+                                text="Track the status of your adoption requests."
+                                class="applicationsSubtitle" />
+
+                        </VBox>
+
+
+                        <Button
+                            id="myApplicationsRefreshButton"
+                            text="Refresh"
+                            icon="sap-icon://refresh"
+                            type="Transparent"
+                            press=".onRefresh" />
+
+                    </HBox>
+
+
+                    <Table
+                        id="myApplicationsTable"
+                        items="{applications>/}"
+                        class="applicationsTable">
+
+                        <columns>
+
+                            <Column
+                                id="animalColumn">
+
+                                <Text
+                                    id="animalColumnText"
+                                    text="Animal" />
+
+                            </Column>
+
+                            <Column
+                                id="applicationDateColumn">
+
+                                <Text
+                                    id="applicationDateColumnText"
+                                    text="Application Date" />
+
+                            </Column>
+
+                            <Column
+                                id="applicationStatusColumn">
+
+                                <Text
+                                    id="applicationStatusColumnText"
+                                    text="Status" />
+
+                            </Column>
+
+                            <Column
+                                id="applicationReasonColumn">
+
+                                <Text
+                                    id="applicationReasonColumnText"
+                                    text="Reason" />
+
+                            </Column>
+
+                            <Column
+                                id="housingDetailsColumn">
+
+                                <Text
+                                    id="housingDetailsColumnText"
+                                    text="Housing Details" />
+
+                            </Column>
+
+                        </columns>
+
+
+                        <items>
+
+                            <ColumnListItem
+                                id="applicationListItemTemplate">
+
+                                <cells>
+
+                                    <Text
+                                        id="applicationAnimalIdText"
+                                        text="{applications>animal_ID}" />
+
+                                    <Text
+                                        id="applicationDateText"
+                                        text="{applications>applicationDate}" />
+
+                                    <ObjectStatus
+                                        id="applicationStatusObjectStatus"
+                                        text="{applications>status}" />
+
+                                    <Text
+                                        id="applicationReasonText"
+                                        text="{applications>reasonForAdoption}" />
+
+                                    <Text
+                                        id="applicationHousingText"
+                                        text="{applications>housingDetails}" />
+
+                                </cells>
+
+                            </ColumnListItem>
+
+                        </items>
+
+                    </Table>
+
+                </VBox>
 
             </VBox>
 

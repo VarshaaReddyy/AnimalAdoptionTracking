@@ -2,6 +2,11 @@ using CatalogService as service from '../../srv/cat-service';
 
 
 annotate service.AdoptionApplicationsSrv with @(
+
+    UI.HeaderInfo : {
+        TypeName : 'Application',
+        TypeNamePlural : 'Applications'
+    },
     UI.LineItem : [
 
     {
@@ -31,8 +36,8 @@ annotate service.AdoptionApplicationsSrv with @(
         Action : 'CatalogService.rejectApplication',
         Label : 'Reject',
         Inline : true
-    }
-
+    },
+    
 ],
     UI.FieldGroup #GeneratedGroup : {
         $Type : 'UI.FieldGroupType',

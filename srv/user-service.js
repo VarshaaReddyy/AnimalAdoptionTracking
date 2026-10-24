@@ -223,4 +223,94 @@ module.exports = cds.service.impl(async function () {
         }
     );
 
+    this.on("READ", "AdoptionsSrv", async (req) => {
+
+    const USER_ID =
+        "21390C66-6925-49F2-BDD5-AF0838C335A5";
+
+    const applications = await SELECT
+        .from(AdoptionApplicationsSrv)
+        .where({
+            applicant_ID: USER_ID
+        })
+        .columns("ID");
+
+    if (!applications.length) {
+        return [];
+    }
+
+    const applicationIDs =
+        applications.map(app => app.ID);
+
+    return await SELECT
+        .from(AdoptionsSrv)
+        .where({
+            application_ID: { in: applicationIDs }
+        });
+});
+
+    this.on("READ", "AdoptionApplicationsSrv", async (req) => {
+
+    const USER_ID =
+        "21390C66-6925-49F2-BDD5-AF0838C335A5";
+
+    return await SELECT
+        .from(AdoptionApplicationsSrv)
+        .where({
+            applicant_ID: USER_ID
+        });
+});
+
+
+    this.on("READ", "UsersSrv", async (req) => {
+
+    const USER_ID =
+        "21390C66-6925-49F2-BDD5-AF0838C335A5";
+
+    return await SELECT
+        .from(UsersSrv)
+        .where({
+            ID: USER_ID
+        });
+});
+
+    this.on("editProfile", async (req) => {
+
+    const USER_ID =
+        "21390C66-6925-49F2-BDD5-AF0838C335A5";
+
+    const {
+        firstName,
+        lastName,
+        email,
+        phoneNumber,
+        address,
+        city,
+        state,
+        postalCode
+    } = req.data;
+
+    await UPDATE(UsersSrv)
+        .set({
+            firstName,
+            lastName,
+            email,
+            phoneNumber,
+            address,
+            city,
+            state,
+            postalCode,
+            modifiedAt: new Date()
+        })
+        .where({
+            ID: USER_ID
+        });
+
+    return await SELECT.one
+        .from(UsersSrv)
+        .where({
+            ID: USER_ID
+        });
+});
+
 });

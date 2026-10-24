@@ -45,10 +45,47 @@ service CatalogService {
         as projection on my.Users;
 
     entity SheltersSrv
-        as projection on my.Shelters;
+    as projection on my.Shelters
+    actions {
+        action editShelter(
+            shelterName      : Name,
+            shelterCode      : String(20),
+            addressLine1     : Address,
+            addressLine2     : Address,
+            city             : City,
+            state            : State,
+            postalCode       : String(20),
+            country          : String(50),
+            contactNumber    : PhoneNumber,
+            email            : Email,
+            website          : Website,
+            capacity         : Integer,
+            currentOccupancy : Integer,
+            operatingTime    : Time,
+            closingTime      : Time,
+            shelterType      : ShelterType,
+            licenseNumber    : String(50)
+        ) returns SheltersSrv;
+    };
 
     entity AnimalsSrv
-        as projection on my.Animals;
+    as projection on my.Animals
+    actions {
+        action editAnimal(
+            shelterID         : GUID,
+            name              : Name,
+            species           : String(100),
+            breed             : String(100),
+            gender            : String(20),
+            age               : Integer,
+            arrivalDate       : Date,
+            animalStatus      : AnimalStatus,
+            vaccinationStatus : VaccinationStatus,
+            spayedOrNeutered  : YesNo,
+            photo             : String(500),
+            description       : Description
+        ) returns AnimalsSrv;
+    };
 
     entity AdoptionApplicationsSrv
         as projection on my.AdoptionApplications
@@ -62,10 +99,37 @@ service CatalogService {
         as projection on my.Adoptions;
 
     entity HealthRecordsSrv
-        as projection on my.HealthRecords;
+    as projection on my.HealthRecords
+    actions {
+        action editHealthRecord(
+            animalID         : GUID,
+            checkupDate      : Date,
+            healthStatus     : HealthStatus,
+            diagnosis        : Description,
+            treatment        : Description,
+            medication       : Description,
+            veterinarianName : Name,
+            weight           : Weight,
+            nextCheckupDate  : Date,
+            remarks          : Description,
+            medicalDocument  : String(500)
+        ) returns HealthRecordsSrv;
+    };
 
     entity InspectionsSrv
-        as projection on my.Inspections;
+    as projection on my.Inspections
+    actions {
+        action editInspection(
+            adoptionID         : GUID,
+            inspectorID        : GUID,
+            inspectionDate     : Date,
+            inspectionType     : InspectionType,
+            existingPetDetails : Description,
+            result             : InspectionResult,
+            remarks            : Description,
+            inspectionDocument : String(500)
+        ) returns InspectionsSrv;
+    };
 
 
     // =========================================================
