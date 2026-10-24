@@ -26,6 +26,14 @@ using {
     db.common.YesNo
 } from '../db/common';
 
+// annotate CatalogService.AdoptionsSrv with @odata.draft.enabled ;
+// annotate CatalogService.UsersSrv with @odata.draft.enabled ;
+// annotate CatalogService.HealthRecordsSrv with @odata.draft.enabled ;
+// annotate CatalogService.AnimalsSrv with @odata.draft.enabled ;
+// annotate CatalogService.AdoptionApplicationsSrv with @odata.draft.enabled ;
+// annotate CatalogService.InspectionsSrv with @odata.draft.enabled ;
+// annotate CatalogService.SheltersSrv with @odata.draft.enabled ;
+
 
 service CatalogService {
 

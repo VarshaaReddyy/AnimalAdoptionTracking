@@ -20,15 +20,163 @@
                     level="H1" />
 
                 <Text
-                    id="userDashboardTestMessage"
-                    text="User Dashboard is working successfully!"
-                    class="sapUiMediumMarginTop" />
+                    id="userDashboardWelcomeText"
+                    text="Manage your applications, adoptions and profile in one place."
+                    class="sapUiSmallMarginBottom" />
 
-                <Button
-                    id="userDashboardTestButton"
-                    text="Test Dashboard"
-                    press=".onTestPress"
-                    class="sapUiMediumMarginTop" />
+                <Title
+                    id="userDashboardSummaryTitle"
+                    text="My Summary"
+                    level="H2"
+                    class="sapUiLargeMarginTop sapUiMediumMarginBottom" />
+
+                <!-- SUMMARY CARDS -->
+
+                <HBox
+                    id="userDashboardSummaryHBox"
+                    width="100%"
+                    justifyContent="SpaceBetween"
+                    wrap="Wrap">
+
+                    <GenericTile
+                        id="userDashboardApplicationsTile"
+                        header="My Applications"
+                        class="sapUiSmallMargin">
+
+                        <TileContent
+                            id="userDashboardApplicationsContent">
+
+                            <NumericContent
+                                id="userDashboardApplicationsValue"
+                                value="{dashboard>/myApplications}" />
+
+                        </TileContent>
+
+                    </GenericTile>
+
+                    <GenericTile
+                        id="userDashboardPendingTile"
+                        header="Pending Applications"
+                        class="sapUiSmallMargin">
+
+                        <TileContent
+                            id="userDashboardPendingContent">
+
+                            <NumericContent
+                                id="userDashboardPendingValue"
+                                value="{dashboard>/pendingApplications}"
+                                valueColor="Critical" />
+
+                        </TileContent>
+
+                    </GenericTile>
+
+                    <GenericTile
+                        id="userDashboardApprovedTile"
+                        header="Approved Applications"
+                        class="sapUiSmallMargin">
+
+                        <TileContent
+                            id="userDashboardApprovedContent">
+
+                            <NumericContent
+                                id="userDashboardApprovedValue"
+                                value="{dashboard>/approvedApplications}"
+                                valueColor="Good" />
+
+                        </TileContent>
+
+                    </GenericTile>
+
+                </HBox>
+
+                <!-- SERVICES -->
+
+                <Title
+                    id="userDashboardServicesTitle"
+                    text="Services"
+                    level="H2"
+                    class="sapUiLargeMarginTop sapUiMediumMarginBottom" />
+
+                <HBox
+                    id="userDashboardServicesHBox"
+                    width="100%"
+                    justifyContent="SpaceBetween"
+                    wrap="Wrap">
+
+                    <GenericTile
+                        id="userDashboardBrowseAnimalsTile"
+                        header="Browse Animals"
+                        subheader="View Available Animals"
+                        press=".onBrowseAnimalsPress"
+                        class="sapUiSmallMargin">
+
+                        <TileContent
+                            id="userDashboardBrowseAnimalsContent">
+
+                            <ImageContent
+                                id="userDashboardBrowseAnimalsIcon"
+                                src="sap-icon://pet-care" />
+
+                        </TileContent>
+
+                    </GenericTile>
+
+                    <GenericTile
+                        id="userDashboardApplicationsServiceTile"
+                        header="My Applications"
+                        subheader="Track Requests"
+                        press=".onMyApplicationsPress"
+                        class="sapUiSmallMargin">
+
+                        <TileContent
+                            id="userDashboardApplicationsServiceContent">
+
+                            <ImageContent
+                                id="userDashboardApplicationsServiceIcon"
+                                src="sap-icon://document" />
+
+                        </TileContent>
+
+                    </GenericTile>
+
+                    <GenericTile
+                        id="userDashboardAdoptionsTile"
+                        header="My Adoptions"
+                        subheader="Adoption History"
+                        press=".onMyAdoptionsPress"
+                        class="sapUiSmallMargin">
+
+                        <TileContent
+                            id="userDashboardAdoptionsContent">
+
+                            <ImageContent
+                                id="userDashboardAdoptionsIcon"
+                                src="sap-icon://accept" />
+
+                        </TileContent>
+
+                    </GenericTile>
+
+                    <GenericTile
+                        id="userDashboardProfileTile"
+                        header="My Profile"
+                        subheader="Manage Profile"
+                        press=".onProfilePress"
+                        class="sapUiSmallMargin">
+
+                        <TileContent
+                            id="userDashboardProfileContent">
+
+                            <ImageContent
+                                id="userDashboardProfileIcon"
+                                src="sap-icon://employee" />
+
+                        </TileContent>
+
+                    </GenericTile>
+
+                </HBox>
 
             </VBox>
 

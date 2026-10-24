@@ -1,4 +1,5 @@
 using CatalogService as service from '../../srv/cat-service';
+
 annotate service.AnimalsSrv with @(
     UI.FieldGroup #GeneratedGroup : {
         $Type : 'UI.FieldGroupType',
@@ -112,4 +113,3 @@ annotate service.AnimalsSrv with {
         ],
     }
 };
-
