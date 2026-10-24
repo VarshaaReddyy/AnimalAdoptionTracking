@@ -37,7 +37,14 @@ service CatalogService {
 
     entity UsersSrv                 as projection on my.Users;
     entity SheltersSrv              as projection on my.Shelters;
-    entity AnimalsSrv               as projection on my.Animals;
+    entity AnimalsSrv as projection on my.Animals
+actions {
+    action applyForAdoption(
+        reasonForAdoption : Description,
+        housingDetails    : Description,
+        petExperience     : Description
+    ) returns AdoptionApplicationsSrv;
+};
     
     entity AdoptionsSrv             as projection on my.Adoptions;
     entity HealthRecordsSrv         as projection on my.HealthRecords;

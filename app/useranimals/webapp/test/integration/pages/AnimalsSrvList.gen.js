@@ -15,7 +15,7 @@
  * ╚═══════════════════════════════════════════════════════════════════════╝ *
  ******************************************************************************/
 
-sap.ui.define(['sap/fe/test/ObjectPage'], function(ObjectPage) {
+sap.ui.define(['sap/fe/test/ListReport'], function(ListReport) {
     'use strict';
 
     const CustomPageDefinitions = {
@@ -23,11 +23,11 @@ sap.ui.define(['sap/fe/test/ObjectPage'], function(ObjectPage) {
         assertions: {}
     };
 
-    return new ObjectPage(
+    return new ListReport(
         {
             appId: 'animal.adoption.useranimals',
-            componentId: 'UsersSrvObjectPage',
-            contextPath: '/UsersSrv'
+            componentId: 'AnimalsSrvList',
+            contextPath: '/AnimalsSrv'
         },
         CustomPageDefinitions
     );

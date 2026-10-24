@@ -56,18 +56,41 @@ sap.ui.define([
 },
 
 onMyApplicationsPress: function () {
+    
+    const sUserId =
+        "21390C66-6925-49F2-BDD5-AF0838C335A5";
+
+    const sFilter =
+        "applicant_ID eq " + sUserId;
+
     window.location.href =
-        "/animal.adoption.userapplications/index.html";
+        "/animal.adoption.userapplications/index.html" +
+        "?$filter=" +
+        encodeURIComponent(sFilter);
+
+        
 },
 
 onMyAdoptionsPress: function () {
+    const sUserId =
+        "21390C66-6925-49F2-BDD5-AF0838C335A5";
+
     window.location.href =
-        "/animal.adoption.useradoptions/index.html";
+        "/animal.adoption.useradoptions/index.html" +
+        "?$filter=application/applicant_ID%20eq%20%27" +
+        sUserId +
+        "%27";
 },
 
 onProfilePress: function () {
+    
+        const sUserId =
+        "21390C66-6925-49F2-BDD5-AF0838C335A5";
+
     window.location.href =
-        "/animal.adoption.userprofile/index.html";
+        "/animal.adoption.userprofile/index.html#/UsersSrv(" +
+        sUserId +
+        ")";
 }
 
         }

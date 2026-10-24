@@ -1,7 +1,7 @@
 ## Application Details
 |               |
 | ------------- |
-|**Generation Date and Time**<br>Thu Oct 22 2026 04:04:40 GMT+0000 (Coordinated Universal Time)|
+|**Generation Date and Time**<br>Sat Oct 24 2026 08:14:27 GMT+0000 (Coordinated Universal Time)|
 |**App Generator**<br>SAP Fiori Application Generator|
 |**App Generator Version**<br>1.33.0|
 |**Generation Platform**<br>SAP Business Application Studio|
@@ -9,13 +9,13 @@
 |**Service Type**<br>Local CAP|
 |**Service URL**<br>http://localhost:4004/odata/v4/catalog/|
 |**Module Name**<br>useranimals|
-|**Application Title**<br>Browse Animals|
+|**Application Title**<br>Browse animals|
 |**Namespace**<br>animal.adoption|
 |**UI5 Theme**<br>sap_horizon|
 |**UI5 Version**<br>1.153.0|
 |**Enable TypeScript**<br>False|
 |**Add Eslint configuration**<br>True, see https://www.npmjs.com/package/@sap-ux/eslint-plugin-fiori-tools#rules for the eslint rules.|
-|**Main Entity**<br>UsersSrv|
+|**Main Entity**<br>AnimalsSrv|
 |**Navigation Entity**<br>None|
 
 ## useranimals

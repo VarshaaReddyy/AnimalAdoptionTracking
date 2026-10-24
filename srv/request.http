@@ -134,3 +134,6 @@ http://localhost:4004/odata/v4/catalog/ShelterOccupancy
 http://localhost:4004/odata/v4/catalog/AdoptionTrend
 ###
 http://localhost:4004/odata/v4/catalog/AnimalCategorySummary
+
+###
+http://localhost:4004/odata/v4/catalog/AdoptionApplicationsSrv?$filter=applicant_ID eq 21390C66-6925-49F2-BDD5-AF0838C335A5

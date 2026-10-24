@@ -22,42 +22,41 @@ sap.ui.define([
     "use strict";
 
     function journey() {
-        QUnit.module("UsersSrvListListReport journey");
+        QUnit.module("AnimalsSrvListListReport journey");
 
         const defaultTableId = "";
 
         opaTest("Start application", function (Given, When, Then) {
             Given.iStartMyApp();
 
-            Then.onTheUsersSrvListGenerated.iSeeThisPage();
+            Then.onTheAnimalsSrvListGenerated.iSeeThisPage();
         });
 
         opaTest("Check filter bar", function (Given, When, Then) {
-            Then.onTheUsersSrvListGenerated.onFilterBar().iCheckFilterField({ property: "firstName" });
-            Then.onTheUsersSrvListGenerated.onFilterBar().iCheckFilterField({ property: "lastName" });
-            Then.onTheUsersSrvListGenerated.onFilterBar().iCheckFilterField({ property: "role" });
-            Then.onTheUsersSrvListGenerated.onFilterBar().iCheckFilterField({ property: "status" });
+            Then.onTheAnimalsSrvListGenerated.onFilterBar().iCheckFilterField({ property: "name" });
+            Then.onTheAnimalsSrvListGenerated.onFilterBar().iCheckFilterField({ property: "species" });
+            Then.onTheAnimalsSrvListGenerated.onFilterBar().iCheckFilterField({ property: "animalStatus" });
         });
 
         // Note: this test will only work if the ListReport page has a search field and shows data that matches the search term. Please ensure that the test data and search term are set up accordingly.
         // opaTest("Perform a global search and check the result", function (Given, When, Then) {
-        //     When.onTheUsersSrvListGenerated.onFilterBar().iChangeSearchField("Search Term");
-        //     When.onTheUsersSrvListGenerated.onFilterBar().iExecuteSearch();
-        //     Then.onTheUsersSrvListGenerated.onTable(defaultTableId).iCheckRows();
-        //     When.onTheUsersSrvListGenerated.onFilterBar().iChangeSearchField(undefined);
-        //     Then.onTheUsersSrvListGenerated.onFilterBar().iCheckSearchField(undefined);
+        //     When.onTheAnimalsSrvListGenerated.onFilterBar().iChangeSearchField("Search Term");
+        //     When.onTheAnimalsSrvListGenerated.onFilterBar().iExecuteSearch();
+        //     Then.onTheAnimalsSrvListGenerated.onTable(defaultTableId).iCheckRows();
+        //     When.onTheAnimalsSrvListGenerated.onFilterBar().iChangeSearchField(undefined);
+        //     Then.onTheAnimalsSrvListGenerated.onFilterBar().iCheckSearchField(undefined);
         // });
 
         opaTest("Check table columns and actions", function (Given, When, Then) {
-            Then.onTheUsersSrvListGenerated.onTable(defaultTableId).iCheckColumns(undefined, {"firstName":{"header":"firstName"},"lastName":{"header":"lastName"},"email":{"header":"email"},"role":{"header":"role"},"status":{"header":"status"}});
+            Then.onTheAnimalsSrvListGenerated.onTable(defaultTableId).iCheckColumns(undefined, {"name":{"header":"name"},"species":{"header":"species"},"breed":{"header":"breed"},"age":{"header":"age"},"animalStatus":{"header":"animalStatus"}});
         });
 
         opaTest("Navigate to ObjectPage", function (Given, When, Then) {
             // Note: this test will fail if the ListReport page doesn't show any data
-            When.onTheUsersSrvListGenerated.onFilterBar().iExecuteSearch();
-            Then.onTheUsersSrvListGenerated.onTable(defaultTableId).iCheckRows();
-            When.onTheUsersSrvListGenerated.onTable(defaultTableId).iPressRow(0);
-            Then.onTheUsersSrvObjectPageGenerated.iSeeThisPage();
+            When.onTheAnimalsSrvListGenerated.onFilterBar().iExecuteSearch();
+            Then.onTheAnimalsSrvListGenerated.onTable(defaultTableId).iCheckRows();
+            When.onTheAnimalsSrvListGenerated.onTable(defaultTableId).iPressRow(0);
+            Then.onTheAnimalsSrvObjectPageGenerated.iSeeThisPage();
         });
 
         opaTest("Teardown", function (Given, When, Then) {

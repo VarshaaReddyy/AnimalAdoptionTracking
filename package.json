@@ -51,6 +51,7 @@
     "app/userapplications",
     "app/useradoptions",
     "app/userinspections",
-    "app/animalusers"
+    "app/animalusers",
+    "app/useranimals"
   ]
 }

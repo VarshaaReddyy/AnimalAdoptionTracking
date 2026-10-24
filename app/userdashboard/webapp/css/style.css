@@ -1,1 +1,237 @@
-/* Enter your custom styles here */
+/* =========================================================
+   USER DASHBOARD
+   ========================================================= */
+
+.dashboardPage {
+    padding: 32px 5%;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   WELCOME CARD
+   ========================================================= */
+
+.welcomeCard {
+    padding: 32px 36px;
+    margin-bottom: 36px;
+
+    border-radius: 24px;
+
+    background: linear-gradient(
+        100deg,
+        #eef9f8,
+        #f4f0ff
+    );
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.welcomeTitle {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 8px;
+}
+
+.welcomeSubtitle {
+    font-size: 1rem !important;
+    color: #667685 !important;
+}
+
+
+/* =========================================================
+   SECTION TITLES
+   ========================================================= */
+
+.sectionTitle {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 18px;
+}
+
+.servicesTitle {
+    margin-top: 32px;
+    margin-bottom: 4px;
+}
+
+.servicesSubtitle {
+    font-size: 1rem !important;
+    color: #71808f !important;
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   CARD ROW
+   ========================================================= */
+
+.cardRow {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   KPI CARDS
+   ========================================================= */
+
+.kpiTotal,
+.kpiPending,
+.kpiApproved {
+    width: 30% !important;
+    min-width: 260px !important;
+    height: 155px !important;
+
+    margin-bottom: 24px;
+
+    border-radius: 20px !important;
+
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.07) !important;
+
+    background: #ffffff !important;
+}
+
+.kpiTotal {
+    border-top: 5px solid #8295f5 !important;
+}
+
+.kpiPending {
+    border-top: 5px solid #f2b36b !important;
+}
+
+.kpiApproved {
+    border-top: 5px solid #70c9a5 !important;
+}
+
+
+/* =========================================================
+   KPI NUMBER
+   ========================================================= */
+
+.kpiNumber {
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   SERVICE CARDS
+   ========================================================= */
+
+.serviceTile {
+    width: 22% !important;
+    min-width: 230px !important;
+    height: 165px !important;
+
+    margin-bottom: 24px;
+
+    border-radius: 20px !important;
+
+    background: #ffffff !important;
+
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.07) !important;
+}
+
+
+/* Different top borders */
+
+.browseTile {
+    border-top: 5px solid #7fc4f2 !important;
+}
+
+.applicationTile {
+    border-top: 5px solid #9b8bea !important;
+}
+
+.adoptionTile {
+    border-top: 5px solid #70c9a5 !important;
+}
+
+.profileTile {
+    border-top: 5px solid #f0a66a !important;
+}
+
+
+/* =========================================================
+   TILE TEXT
+   ========================================================= */
+
+.dashboardTile .sapMGTHeaderText {
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+}
+
+.dashboardTile .sapMGTSubHdrTxt {
+    font-size: 0.9rem !important;
+    color: #62758a !important;
+}
+
+
+/* =========================================================
+   TILE ICON
+   ========================================================= */
+
+.serviceTile .sapUiIcon {
+    font-size: 2rem !important;
+    color: #526b83 !important;
+}
+
+
+/* =========================================================
+   HOVER EFFECT
+   ========================================================= */
+
+.dashboardTile {
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.dashboardTile:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.12) !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .kpiTotal,
+    .kpiPending,
+    .kpiApproved {
+        width: 45% !important;
+        min-width: 240px !important;
+    }
+
+    .serviceTile {
+        width: 45% !important;
+        min-width: 220px !important;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .dashboardPage {
+        padding: 20px;
+    }
+
+    .welcomeCard {
+        padding: 24px;
+    }
+
+    .welcomeTitle {
+        font-size: 1.5rem !important;
+    }
+
+    .kpiTotal,
+    .kpiPending,
+    .kpiApproved,
+    .serviceTile {
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+}

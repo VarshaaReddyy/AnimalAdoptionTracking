@@ -1,12 +1,12 @@
 {
   "generationParameters": {
-    "generationDate": "Thu Oct 22 2026 04:04:40 GMT+0000 (Coordinated Universal Time)",
+    "generationDate": "Sat Oct 24 2026 08:14:27 GMT+0000 (Coordinated Universal Time)",
     "generatorPlatform": "SAP Business Application Studio",
     "serviceType": "Local CAP",
     "metadataFilename": "",
     "serviceUrl": "http://localhost:4004/odata/v4/catalog/",
     "appName": "useranimals",
-    "appTitle": "Browse Animals",
+    "appTitle": "Browse animals",
     "appDescription": "An SAP Fiori application.",
     "appNamespace": "animal.adoption",
     "ui5Theme": "sap_horizon",
@@ -20,7 +20,7 @@
     "entityRelatedConfig": [
       {
         "type": "Main Entity",
-        "value": "UsersSrv"
+        "value": "AnimalsSrv"
       },
       {
         "type": "Navigation Entity",

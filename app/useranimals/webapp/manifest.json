@@ -13,7 +13,7 @@
     "sourceTemplate": {
       "id": "@sap/generator-fiori:lrop",
       "version": "1.33.0",
-      "toolsId": "715b7090-923d-4f4a-85f3-8d50356fcedc"
+      "toolsId": "582cecbb-df9b-4297-971a-583961275127"
     },
     "dataSources": {
       "mainService": {
@@ -85,28 +85,28 @@
       "routes": [
         {
           "pattern": ":?query:",
-          "name": "UsersSrvList",
-          "target": "UsersSrvList"
+          "name": "AnimalsSrvList",
+          "target": "AnimalsSrvList"
         },
         {
-          "pattern": "UsersSrv({key}):?query:",
-          "name": "UsersSrvObjectPage",
-          "target": "UsersSrvObjectPage"
+          "pattern": "AnimalsSrv({key}):?query:",
+          "name": "AnimalsSrvObjectPage",
+          "target": "AnimalsSrvObjectPage"
         }
       ],
       "targets": {
-        "UsersSrvList": {
+        "AnimalsSrvList": {
           "type": "Component",
-          "id": "UsersSrvList",
+          "id": "AnimalsSrvList",
           "name": "sap.fe.templates.ListReport",
           "options": {
             "settings": {
-              "contextPath": "/UsersSrv",
+              "contextPath": "/AnimalsSrv",
               "variantManagement": "Page",
               "navigation": {
-                "UsersSrv": {
+                "AnimalsSrv": {
                   "detail": {
-                    "route": "UsersSrvObjectPage"
+                    "route": "AnimalsSrvObjectPage"
                   }
                 }
               },
@@ -120,14 +120,14 @@
             }
           }
         },
-        "UsersSrvObjectPage": {
+        "AnimalsSrvObjectPage": {
           "type": "Component",
-          "id": "UsersSrvObjectPage",
+          "id": "AnimalsSrvObjectPage",
           "name": "sap.fe.templates.ObjectPage",
           "options": {
             "settings": {
               "editableHeaderContent": false,
-              "contextPath": "/UsersSrv"
+              "contextPath": "/AnimalsSrv"
             }
           }
         }

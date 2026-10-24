@@ -11,101 +11,125 @@
 
             <VBox
                 id="mainVBox"
-                class="sapUiMediumMargin">
+                class="dashboardPage">
 
-                <Title
-                    id="userDashboardTitle"
-                    text="Welcome to Animal Adoption Tracker" />
+                <!-- WELCOME SECTION -->
+                <VBox
+                    id="welcomeBox"
+                    class="welcomeCard">
 
+                    <Title
+                        id="userDashboardTitle"
+                        text="Welcome to Animal Adoption Tracker"
+                        class="welcomeTitle" />
+
+                    <Text
+                        id="welcomeSubtitle"
+                        text="Manage your applications, adoptions and profile in one place."
+                        class="welcomeSubtitle" />
+
+                </VBox>
+
+
+                <!-- SUMMARY -->
                 <Title
                     id="summaryTitle"
                     text="My Summary"
-                    level="H3"
-                    class="sapUiMediumMarginTop" />
-
-                <!-- KPI CARDS -->
+                    level="H2"
+                    class="sectionTitle" />
 
                 <HBox
                     id="kpiHBox"
                     wrap="Wrap"
-                    justifyContent="SpaceAround">
+                    justifyContent="SpaceBetween"
+                    class="cardRow">
 
+                    <!-- TOTAL -->
                     <GenericTile
                         id="totalApplicationsTile"
                         header="Total Applications"
-                        class="sapUiSmallMargin">
+                        class="dashboardTile kpiTotal">
 
-                        <TileContent
-                            id="totalApplicationsContent">
+                        <TileContent id="totalApplicationsContent">
 
                             <NumericContent
                                 id="totalApplicationsCount"
-                                value="{dashboard>/totalApplications}" />
+                                value="{dashboard>/myApplications}"
+                                class="kpiNumber" />
 
                         </TileContent>
 
                     </GenericTile>
 
+
+                    <!-- PENDING -->
                     <GenericTile
                         id="pendingApplicationsTile"
                         header="Pending Applications"
-                        class="sapUiSmallMargin">
+                        class="dashboardTile kpiPending">
 
-                        <TileContent
-                            id="pendingApplicationsContent">
+                        <TileContent id="pendingApplicationsContent">
 
                             <NumericContent
                                 id="pendingApplicationsCount"
                                 value="{dashboard>/pendingApplications}"
-                                valueColor="Critical" />
+                                valueColor="Critical"
+                                class="kpiNumber" />
 
                         </TileContent>
 
                     </GenericTile>
 
+
+                    <!-- APPROVED -->
                     <GenericTile
                         id="approvedApplicationsTile"
                         header="Approved Applications"
-                        class="sapUiSmallMargin">
+                        class="dashboardTile kpiApproved">
 
-                        <TileContent
-                            id="approvedApplicationsContent">
+                        <TileContent id="approvedApplicationsContent">
 
                             <NumericContent
                                 id="approvedApplicationsCount"
                                 value="{dashboard>/approvedApplications}"
-                                valueColor="Good" />
+                                valueColor="Good"
+                                class="kpiNumber" />
 
                         </TileContent>
 
                     </GenericTile>
 
-                    
-
                 </HBox>
 
+
+                <!-- SERVICES -->
                 <Title
                     id="servicesTitle"
                     text="Services"
-                    level="H3"
-                    class="sapUiLargeMarginTop sapUiMediumMarginBottom" />
+                    level="H2"
+                    class="sectionTitle servicesTitle" />
 
-                <!-- NAVIGATION TILES -->
+                <Text
+                    id="servicesSubtitle"
+                    text="Quick access to your adoption activities"
+                    class="servicesSubtitle" />
+
 
                 <HBox
                     id="navigationHBox"
                     wrap="Wrap"
-                    justifyContent="SpaceAround">
+                    justifyContent="SpaceBetween"
+                    class="cardRow servicesRow">
 
+                    <!-- BROWSE ANIMALS -->
                     <GenericTile
                         id="browseAnimalsTile"
                         header="Browse Animals"
                         subheader="View Available Animals"
                         press=".onBrowseAnimalsPress"
-                        class="sapUiSmallMargin">
+                        class="dashboardTile serviceTile browseTile">
 
-                        <TileContent
-                            id="browseAnimalsTileContent">
+                        <TileContent id="browseAnimalsTileContent">
 
                             <ImageContent
                                 id="browseAnimalsImage"
@@ -115,15 +139,16 @@
 
                     </GenericTile>
 
+
+                    <!-- APPLICATIONS -->
                     <GenericTile
                         id="myApplicationsTile"
                         header="My Applications"
-                        subheader="Track Requests"
+                        subheader="Track Your Requests"
                         press=".onMyApplicationsPress"
-                        class="sapUiSmallMargin">
+                        class="dashboardTile serviceTile applicationTile">
 
-                        <TileContent
-                            id="myApplicationsTileContent">
+                        <TileContent id="myApplicationsTileContent">
 
                             <ImageContent
                                 id="myApplicationsImage"
@@ -133,15 +158,16 @@
 
                     </GenericTile>
 
+
+                    <!-- ADOPTIONS -->
                     <GenericTile
                         id="myAdoptionsTile"
                         header="My Adoptions"
-                        subheader="Adoption History"
+                        subheader="View Adoption History"
                         press=".onMyAdoptionsPress"
-                        class="sapUiSmallMargin">
+                        class="dashboardTile serviceTile adoptionTile">
 
-                        <TileContent
-                            id="myAdoptionsTileContent">
+                        <TileContent id="myAdoptionsTileContent">
 
                             <ImageContent
                                 id="myAdoptionsImage"
@@ -151,15 +177,16 @@
 
                     </GenericTile>
 
+
+                    <!-- PROFILE -->
                     <GenericTile
                         id="profileTile"
                         header="My Profile"
-                        subheader="Manage Profile"
+                        subheader="Manage Your Profile"
                         press=".onProfilePress"
-                        class="sapUiSmallMargin">
+                        class="dashboardTile serviceTile profileTile">
 
-                        <TileContent
-                            id="profileTileContent">
+                        <TileContent id="profileTileContent">
 
                             <ImageContent
                                 id="profileImage"
@@ -168,8 +195,6 @@
                         </TileContent>
 
                     </GenericTile>
-
-                    
 
                 </HBox>
 

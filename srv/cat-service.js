@@ -10,7 +10,8 @@ module.exports = cds.service.impl(async function () {
         AdoptionsSrv,
         HealthRecordsSrv,
         InspectionsSrv,
-        DashboardStats
+        DashboardStats,
+
     } = this.entities;
 
     // ==========================================================
@@ -337,6 +338,76 @@ this.on("READ", "AnimalCategorySummary", async () => {
 
     //     return applicationData;
     // });
+
+   this.on("applyForAdoption", async (req) => {
+
+    const animalID = req.params[0].ID;
+
+    const {
+        reasonForAdoption,
+        housingDetails,
+        petExperience
+    } = req.data;
+
+    // Sample logged-in user
+    const applicantID =
+        "21390C66-6925-49F2-BDD5-AF0838C335A5";
+
+    try {
+
+        // Check animal exists
+        const animal = await SELECT.one
+            .from(AnimalsSrv)
+            .where({ ID: animalID });
+
+        if (!animal) {
+            req.error(404, "Animal not found");
+        }
+
+        // Check animal availability
+        if (animal.animalStatus !== "AVAILABLE") {
+            req.error(
+                400,
+                "This animal is not available for adoption"
+            );
+        }
+
+        // Create application
+        await INSERT.into(AdoptionApplicationsSrv).entries({
+
+            animal_ID: animalID,
+            applicant_ID: applicantID,
+
+            applicationDate: new Date(),
+
+            reasonForAdoption:
+                reasonForAdoption,
+
+            housingDetails:
+                housingDetails,
+
+            petExperience:
+                petExperience,
+
+            status: "PENDING",
+
+            createdAt: new Date(),
+            modifiedAt: new Date()
+
+        });
+
+        return "Application submitted successfully";
+
+    } catch (error) {
+
+        console.error(
+            "Apply for Adoption Error:",
+            error
+        );
+
+        req.error(500, error.message);
+    }
+});
 
     this.on('READ', 'UserDashboardStats', async (request) => {
     const USER_ID =
